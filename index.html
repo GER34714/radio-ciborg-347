@@ -10,18 +10,17 @@
     color: #fff;
     font-family: Arial, sans-serif;
     text-align: center;
-    overflow-x: hidden;
   }
   h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.6em;
+    font-size: 2.8em;
     color: #0ff;
     text-shadow: 0 0 15px #0ff, 0 0 25px #09f;
     animation: pulse 2s infinite alternate;
   }
   @keyframes pulse {
     from { text-shadow: 0 0 10px #0ff, 0 0 20px #09f; }
-    to { text-shadow: 0 0 25px #0ff, 0 0 50px #09f; }
+    to { text-shadow: 0 0 30px #0ff, 0 0 50px #09f; }
   }
   button {
     background: #0ff;
@@ -37,17 +36,17 @@
     background: #09f;
     box-shadow: 0 0 25px #09f;
   }
+  input[type="range"] {
+    width: 200px;
+    margin-top: 10px;
+    accent-color: #0ff;
+  }
   canvas {
     display: block;
     margin: 30px auto;
     width: 90%;
     height: 180px;
     background: transparent;
-  }
-  input[type="range"] {
-    width: 200px;
-    margin-top: 10px;
-    accent-color: #0ff;
   }
 </style>
 </head>
@@ -56,7 +55,7 @@
 <h1>🎧 Radio Pulso Digital Urbano™</h1>
 <p>El ritmo de la calle y la energía del futuro 🔊</p>
 
-<audio id="radio" src="https://radioimagen76.radio12345.com/" crossorigin="anonymous"></audio>
+<audio id="radio" src="http://uk15freenew.listen2myradio.com:7546/;stream.mp3" crossorigin="anonymous"></audio>
 
 <div>
   <button id="playBtn">▶️ Play</button><br>
@@ -116,5 +115,6 @@ volume.addEventListener('input', () => {
   audio.volume = volume.value;
 });
 </script>
+
 </body>
 </html>
