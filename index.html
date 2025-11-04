@@ -31,8 +31,7 @@
   .wave{
     position:absolute;bottom:0;width:200%;height:200%;
     background:rgba(0,255,255,0.05);
-    border-radius:45%;
-    animation:waveMove 12s infinite linear;
+    border-radius:45%;animation:waveMove 12s infinite linear;
   }
   .wave:nth-child(2){animation-duration:16s;opacity:.6;}
   .wave:nth-child(3){animation-duration:20s;opacity:.4;}
@@ -129,7 +128,7 @@
 
   .player-container{
     width:100%;
-    height:100px; /* solo la parte inferior visible */
+    height:80px; /* más chico, visible solo el control */
     overflow:hidden;
     border-radius:16px;
     box-shadow:0 0 30px rgba(0,255,255,0.5);
@@ -137,9 +136,9 @@
   }
   .player-container iframe{
     width:100%;
-    height:300px; /* alto original del player */
+    height:300px; /* altura original del player */
     border:none;
-    transform:translateY(-200px); /* oculta todo lo de arriba */
+    transform:translateY(-215px); /* recorte calibrado */
   }
 
   .close-btn{
@@ -153,17 +152,15 @@
     box-shadow:0 0 25px #ff0080;
   }
 
-  /* ⚙️ Footer */
   .footer{
     font-size:.9em;color:#777;margin-top:60px;
   }
   .footer a{color:#0ff;text-decoration:none;}
   .footer a:hover{text-decoration:underline;}
 
-  /* 📱 Responsivo */
   @media(max-width:600px){
-    .player-container{height:90px;}
-    .player-container iframe{transform:translateY(-190px);}
+    .player-container{height:70px;}
+    .player-container iframe{transform:translateY(-205px);}
     .radio-box{padding:60px 25px;margin:150px 20px 60px;}
     .radio-title{font-size:2.4em;}
     .play-btn{font-size:1.2em;padding:16px 45px;}
@@ -173,21 +170,18 @@
 </head>
 
 <body>
-  <!-- 🌊 Fondo -->
   <div class="waves">
     <div class="wave"></div>
     <div class="wave"></div>
     <div class="wave"></div>
   </div>
 
-  <!-- 🔝 Header -->
   <header>
     <img src="https://iili.io/KHOiff9.md.png" alt="Logo Radio Imagen">
     <h1>RADIO IMAGEN</h1>
     <div class="live-bar" id="liveBar"></div>
   </header>
 
-  <!-- 🎧 Caja principal -->
   <div class="radio-box">
     <h2 class="radio-title">🎧 RADIO IMAGEN <span style="color:#ff0080;">by CARLOS™</span></h2>
     <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
