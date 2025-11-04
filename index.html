@@ -14,19 +14,16 @@
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
     font-family:'Luckiest Guy',cursive;
     background:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     color:#0ff;
+    overflow-x:hidden;
   }
 
   /* 🌊 Fondo animado de ondas neón */
   .waves{
-    position:absolute;
+    position:fixed;
     top:0;left:0;width:100%;height:100%;
     background:radial-gradient(circle at 50% 50%,#050018 0%,#000010 80%);
     overflow:hidden;z-index:0;
@@ -36,42 +33,42 @@
     bottom:0;width:200%;height:200%;
     background:rgba(0,255,255,0.05);
     border-radius:45%;
-    animation:waveMove 10s infinite linear;
+    animation:waveMove 12s infinite linear;
   }
-  .wave:nth-child(2){animation-duration:12s;opacity:.6;}
-  .wave:nth-child(3){animation-duration:15s;opacity:.4;}
+  .wave:nth-child(2){animation-duration:16s;opacity:.6;}
+  .wave:nth-child(3){animation-duration:20s;opacity:.4;}
   @keyframes waveMove{
     0%{transform:translateX(0) rotate(0deg);}
     100%{transform:translateX(-50%) rotate(360deg);}
   }
 
-  /* 📻 Contenedor principal */
+  /* 📻 Caja principal */
   .radio-box{
     position:relative;
     z-index:2;
-    text-align:center;
     background:rgba(0,0,0,0.85);
-    padding:40px 30px;
-    border-radius:25px;
-    box-shadow:0 0 30px #00ffff;
-    max-width:500px;
-    width:90%;
-    animation:neonPulse 4s infinite;
+    border-radius:30px;
+    box-shadow:0 0 35px #00ffff;
+    max-width:700px;
+    margin:100px auto;
+    padding:70px 40px;
+    text-align:center;
+    animation:neonPulse 5s infinite;
   }
   @keyframes neonPulse{
-    0%,100%{box-shadow:0 0 30px #00ffff;}
-    50%{box-shadow:0 0 10px #00ffff;}
+    0%,100%{box-shadow:0 0 35px #00ffff;}
+    50%{box-shadow:0 0 15px #00ffff;}
   }
 
   .radio-title{
-    font-size:2.2em;
-    text-shadow:0 0 20px #0ff;
-    margin-bottom:10px;
+    font-size:3em;
+    text-shadow:0 0 25px #0ff;
+    margin-bottom:25px;
   }
   .radio-sub{
     color:#aaa;
-    font-size:1em;
-    margin-bottom:20px;
+    font-size:1.1em;
+    margin-bottom:40px;
   }
 
   /* 🎵 Botón principal */
@@ -79,40 +76,40 @@
     background:linear-gradient(135deg,#00ffff,#0080ff);
     color:#000;
     border:none;
-    padding:18px 40px;
+    padding:20px 60px;
     border-radius:50px;
-    font-size:1.4em;
+    font-size:1.6em;
     cursor:pointer;
     text-shadow:0 0 6px #0ff;
-    box-shadow:0 0 20px #00ffff;
+    box-shadow:0 0 25px #00ffff;
     transition:.3s;
   }
   .play-btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 35px #00ffff;
+    transform:scale(1.08);
+    box-shadow:0 0 40px #00ffff;
   }
 
   /* 🎧 Player */
   .player-box{
-    margin-top:25px;
+    margin-top:50px;
     display:none;
-    animation:fadeIn .8s ease forwards;
+    animation:fadeIn 1s ease forwards;
   }
   @keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px);}
+    from{opacity:0;transform:translateY(40px);}
     to{opacity:1;transform:translateY(0);}
   }
 
   .player{
     position:relative;
     width:100%;
-    border-radius:16px;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 0 25px rgba(0,255,255,0.5);
+    box-shadow:0 0 35px rgba(0,255,255,0.5);
   }
   .player iframe{
     width:100%;
-    height:150px;
+    height:170px;
     border:none;
     display:block;
     background:#000;
@@ -125,38 +122,38 @@
     justify-content:center;
     align-items:center;
     pointer-events:none;
-    font-size:1.3em;
+    font-size:1.5em;
     color:#0ff;
     animation:pulse 2s infinite;
   }
   @keyframes pulse{
-    0%,100%{opacity:1;filter:drop-shadow(0 0 8px #0ff);}
+    0%,100%{opacity:1;filter:drop-shadow(0 0 10px #0ff);}
     50%{opacity:.4;filter:drop-shadow(0 0 2px #0ff);}
   }
 
   /* ❌ Botón de cierre */
   .close-btn{
-    margin-top:12px;
+    margin-top:20px;
     background:#ff0080;
     border:none;
     color:#fff;
-    font-size:1em;
-    padding:8px 15px;
-    border-radius:8px;
+    font-size:1.1em;
+    padding:12px 25px;
+    border-radius:12px;
     cursor:pointer;
-    box-shadow:0 0 10px #ff0080;
+    box-shadow:0 0 15px #ff0080;
     transition:.3s;
   }
   .close-btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px #ff0080;
+    transform:scale(1.08);
+    box-shadow:0 0 25px #ff0080;
   }
 
   /* ⚙️ Footer */
   .footer{
-    font-size:.8em;
-    color:#666;
-    margin-top:18px;
+    font-size:.9em;
+    color:#777;
+    margin-top:60px;
   }
   .footer a{
     color:#0ff;
@@ -164,6 +161,17 @@
   }
   .footer a:hover{
     text-decoration:underline;
+  }
+
+  /* 📱 Responsivo */
+  @media(max-width:600px){
+    .radio-box{
+      padding:60px 25px;
+      margin:80px 20px;
+    }
+    .radio-title{font-size:2.2em;}
+    .play-btn{font-size:1.2em;padding:16px 45px;}
+    .player iframe{height:150px;}
   }
 </style>
 </head>
@@ -181,7 +189,7 @@
     <h2 class="radio-title">🎧 RADIO IMAGEN <span style="color:#ff0080;">by CARLOS™</span></h2>
     <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
 
-    <button class="play-btn" onclick="abrirPlayer()">▶️ ESCUCHAR RADIO</button>
+    <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ ESCUCHAR RADIO</button>
 
     <div class="player-box" id="playerBox">
       <div class="player">
@@ -201,9 +209,11 @@
   <script>
     function abrirPlayer(){
       document.getElementById('playerBox').style.display='block';
+      document.getElementById('playButton').style.display='none';
     }
     function cerrarPlayer(){
       document.getElementById('playerBox').style.display='none';
+      document.getElementById('playButton').style.display='inline-block';
     }
   </script>
 </body>
