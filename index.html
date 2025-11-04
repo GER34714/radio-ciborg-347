@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎧 Radio Imagen™ | En Vivo 24hs</title>
+
+<!-- 🟣 Favicon completo -->
 <link rel="icon" type="image/png" href="https://iili.io/KZ3YpR4.md.png">
+<link rel="shortcut icon" href="https://iili.io/KZ3YpR4.md.png" type="image/png">
 
 <meta property="og:title" content="Radio Imagen by Carlos™ | Música, difusión y buena vibra 24hs 🎵">
 <meta property="og:description" content="Sintonizá RADIO IMAGEN™ – música sin pausas, difusión, entrevistas y buena energía. Escuchanos en vivo ahora 🎧">
@@ -51,14 +54,22 @@ body{
   50%{box-shadow:0 0 15px #ff00ff;}
 }
 
-/* 🎙️ Título principal */
+/* 🎙️ Título principal multicolor */
 .radio-title{
   font-family:'Amadeus',sans-serif;
   font-size:2.8em;
   letter-spacing:2px;
   margin-bottom:25px;
-  color:#00ffff;
-  text-shadow:0 0 15px #00ffff, 0 0 30px #ff00ff;
+  background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:300%;
+  animation:neonFlow 6s infinite linear;
+  text-shadow:0 0 20px rgba(0,255,255,0.4);
+}
+@keyframes neonFlow{
+  0%{background-position:0%;}
+  100%{background-position:100%;}
 }
 
 /* Logo */
@@ -218,10 +229,8 @@ body{
 
 <!-- 🎙️ SECCIÓN PUBLICIDAD -->
 <div class="promo-box">
-  <h2>📢 ¡Hacémos publicidad de tu marca en 
- 
-RADIO IMAGEN™!</h2>
-  <p>🎧 Convertí tu negocio en protagonista del aire.   
+  <h2>📢 ¡Hacemos publicidad de tu marca en RADIO IMAGEN™!</h2>
+  <p>🎧 Convertí tu negocio en protagonista del aire.  
 
 🎙️ Promocioná tu marca, producto o evento con menciones en vivo, spots profesionales y presencia en nuestra programación.  
 
