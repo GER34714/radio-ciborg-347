@@ -3,211 +3,266 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RADIO IMAGEN by CARLOS™</title>
-<link rel="icon" type="image/png" href="https://iili.io/KHOiff9.md.png">
-<meta property="og:title" content="RADIO IMAGEN by CARLOS™">
-<meta property="og:description" content="Transmisión en vivo las 24 hs – Música, difusión y buena vibra 🎵">
-<meta property="og:image" content="https://iili.io/KHOiff9.md.png">
+<title>🎧 RADIO IMAGEN by CARLOS™ | En Vivo 24hs</title>
+<link rel="icon" type="image/png" href="https://iili.io/KZ3YpR4.md.png">
+
+<!-- 🟣 OPEN GRAPH + SEO -->
+<meta property="og:title" content="RADIO IMAGEN by CARLOS™ | Música, difusión y buena vibra 24hs 🎵">
+<meta property="og:description" content="Sintonizá RADIO IMAGEN™ – música sin pausas, difusión, entrevistas y buena energía. Escuchanos en vivo ahora 🎧">
+<meta property="og:image" content="https://iili.io/KZ3YpR4.md.png">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://radioimagen347.onrender.com">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="🎧 RADIO IMAGEN by CARLOS™ – 24hs de música, difusión y buena vibra. ¡Escuchanos en vivo ahora!">
+<meta name="theme-color" content="#00ffff">
 
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    min-height:100vh;
-    font-family:'Luckiest Guy',cursive;
-    background:#000;
-    color:#0ff;
-    overflow-x:hidden;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Luckiest Guy',cursive;
+  background:#000;
+  color:#0ff;
+  overflow-x:hidden;
+}
 
-  /* 🌊 Fondo animado */
-  .waves{
-    position:fixed;
-    top:0;left:0;width:100%;height:100%;
-    background:radial-gradient(circle at 50% 50%,#050018 0%,#000010 80%);
-    overflow:hidden;z-index:0;
-  }
-  .wave{
-    position:absolute;bottom:0;width:200%;height:200%;
-    background:rgba(0,255,255,0.05);
-    border-radius:45%;
-    animation:waveMove 12s infinite linear;
-  }
-  .wave:nth-child(2){animation-duration:16s;opacity:.6;}
-  .wave:nth-child(3){animation-duration:20s;opacity:.4;}
-  @keyframes waveMove{
-    0%{transform:translateX(0) rotate(0deg);}
-    100%{transform:translateX(-50%) rotate(360deg);}
-  }
+/* 🌊 Fondo animado */
+.waves{
+  position:fixed;
+  top:0;left:0;width:100%;height:100%;
+  background:radial-gradient(circle at 50% 50%,#050018 0%,#000010 80%);
+  overflow:hidden;z-index:0;
+}
+.wave{
+  position:absolute;bottom:0;width:200%;height:200%;
+  background:rgba(0,255,255,0.08);
+  border-radius:45%;
+  animation:waveMove 12s infinite linear;
+}
+.wave:nth-child(2){animation-duration:16s;opacity:.6;}
+.wave:nth-child(3){animation-duration:20s;opacity:.4;}
+@keyframes waveMove{
+  0%{transform:translateX(0) rotate(0deg);}
+  100%{transform:translateX(-50%) rotate(360deg);}
+}
 
-  /* 🔝 Header */
-  header{
-    position:fixed;
-    top:0;left:0;width:100%;
-    background:rgba(0,0,0,0.85);
-    box-shadow:0 0 20px #00ffff;
-    padding:10px 0;
-    text-align:center;
-    z-index:10;
-  }
-  header img{height:50px;vertical-align:middle;}
-  header h1{
-    display:inline-block;
-    font-size:1.8em;
-    color:#0ff;
-    text-shadow:0 0 12px #0ff;
-    margin-left:10px;
-    vertical-align:middle;
-  }
-  .live-bar{
-    width:100%;height:6px;
-    background:linear-gradient(90deg,#ff0080,#ff0,#00ffff);
-    box-shadow:0 0 25px #0ff;
-  }
+/* 🔝 Header */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:rgba(0,0,0,0.9);
+  box-shadow:0 0 25px #00ffff;
+  padding:10px 0;
+  text-align:center;
+  z-index:10;
+}
+header img{height:55px;vertical-align:middle;filter:drop-shadow(0 0 10px #00ffff);}
+header h1{
+  display:inline-block;
+  font-size:2em;
+  color:#00eaff;
+  text-shadow:0 0 18px #00ffff;
+  margin-left:10px;
+  vertical-align:middle;
+}
+.live-bar{
+  width:100%;height:6px;
+  background:linear-gradient(90deg,#ff0080,#ff0,#00ffff);
+  box-shadow:0 0 25px #0ff;
+}
+.live-bar.active{animation:pulseBar 1.2s infinite;}
+@keyframes pulseBar{0%,100%{opacity:0.4;}50%{opacity:1;}}
 
-  /* 📻 Caja principal */
-  .radio-box{
-    position:relative;z-index:2;
-    background:rgba(0,0,0,0.85);
-    border-radius:30px;
-    box-shadow:0 0 35px #00ffff;
-    max-width:700px;
-    margin:160px auto 100px;
-    padding:80px 50px;
-    text-align:center;
-    animation:neonPulse 5s infinite;
-  }
-  @keyframes neonPulse{
-    0%,100%{box-shadow:0 0 35px #00ffff;}
-    50%{box-shadow:0 0 15px #00ffff;}
-  }
+/* 📻 Caja principal */
+.radio-box{
+  position:relative;z-index:2;
+  background:rgba(0,0,0,0.85);
+  border-radius:30px;
+  box-shadow:0 0 40px #00ffff;
+  max-width:700px;
+  margin:160px auto 100px;
+  padding:80px 50px;
+  text-align:center;
+  animation:neonPulse 5s infinite;
+}
+@keyframes neonPulse{
+  0%,100%{box-shadow:0 0 40px #00ffff;}
+  50%{box-shadow:0 0 15px #00ffff;}
+}
 
-  .radio-title{
-    font-size:3em;
-    text-shadow:0 0 25px #0ff;
-    margin-bottom:25px;
-  }
-  .radio-sub{
-    color:#aaa;font-size:1.1em;margin-bottom:40px;
-  }
+.radio-title{
+  font-size:3em;
+  text-shadow:0 0 25px #00ffff,0 0 40px #ff0080;
+  margin-bottom:25px;
+}
+.radio-sub{
+  color:#fff;font-size:1.2em;margin-bottom:40px;
+  text-shadow:0 0 10px #00ffff;
+}
+.play-btn{
+  background:linear-gradient(135deg,#00ffff,#ff0080);
+  color:#000;border:none;
+  padding:20px 60px;border-radius:50px;
+  font-size:1.6em;cursor:pointer;
+  text-shadow:0 0 6px #fff;
+  box-shadow:0 0 25px #00ffff;
+  transition:.3s;
+}
+.play-btn:hover{transform:scale(1.08);box-shadow:0 0 45px #ff00ff;}
 
-  .play-btn{
-    background:linear-gradient(135deg,#00ffff,#0080ff);
-    color:#000;border:none;
-    padding:20px 60px;border-radius:50px;
-    font-size:1.6em;cursor:pointer;
-    text-shadow:0 0 6px #0ff;
-    box-shadow:0 0 25px #00ffff;
-    transition:.3s;
-  }
-  .play-btn:hover{transform:scale(1.08);box-shadow:0 0 40px #00ffff;}
+/* 🎧 Mini-player */
+.player-box{
+  margin-top:50px;
+  display:none;
+  animation:fadeIn 1s ease forwards;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.player-container{
+  width:120px;height:110px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:25px;
+  box-shadow:0 0 25px rgba(0,255,255,0.6);
+  position:relative;
+}
+.player-container iframe{
+  width:100%;height:300px;border:none;
+  transform:translateY(-215px);
+  scale:1.6;
+}
+.close-btn{
+  margin-top:25px;background:#ff0080;border:none;
+  color:#fff;font-size:1.1em;padding:12px 25px;
+  border-radius:12px;cursor:pointer;
+  box-shadow:0 0 15px #ff0080;transition:.3s;
+}
+.close-btn:hover{transform:scale(1.08);box-shadow:0 0 25px #ff0080;}
 
-  /* 🎧 Mini-player */
-  .player-box{
-    margin-top:50px;
-    display:none;
-    animation:fadeIn 1s ease forwards;
-  }
-  @keyframes fadeIn{
-    from{opacity:0;transform:translateY(40px);}
-    to{opacity:1;transform:translateY(0);}
-  }
+/* 💬 Publicidad */
+.promo-box{
+  position:relative;
+  z-index:2;
+  max-width:700px;
+  margin:0 auto 120px;
+  background:rgba(0,0,0,0.85);
+  border-radius:25px;
+  padding:50px 40px;
+  text-align:center;
+  box-shadow:0 0 30px #ff00ff;
+  animation:slideUp 1s ease forwards;
+}
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(80px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.promo-box h2{
+  color:#ff00ff;font-size:2.4em;
+  text-shadow:0 0 20px #ff00ff,0 0 35px #00ffff;
+  margin-bottom:15px;
+}
+.promo-box p{
+  color:#fff;font-size:1.1em;line-height:1.6em;
+  margin-bottom:20px;text-shadow:0 0 10px #00ffff;
+}
+.promo-btn{
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;border:none;padding:15px 45px;
+  font-size:1.2em;border-radius:50px;
+  text-decoration:none;display:inline-block;
+  box-shadow:0 0 25px #25D366;transition:.3s;
+}
+.promo-btn:hover{transform:scale(1.05);box-shadow:0 0 35px #25D366;}
 
-  .player-container{
-    width:120px;
-    height:110px; /* 🔧 un poco más chico */
-    margin:auto;
-    overflow:hidden;
-    border-radius:25px;
-    box-shadow:0 0 25px rgba(0,255,255,0.6);
-    position:relative;
-  }
-  .player-container iframe{
-    width:100%;
-    height:300px;
-    border:none;
-    transform:translateY(-215px); /* 🔧 subido un poco más */
-    scale:1.6;
-  }
+/* ⚙️ Footer */
+.footer{
+  font-size:.9em;color:#888;margin:60px 0;text-align:center;
+}
+.footer a{color:#0ff;text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
 
-  .close-btn{
-    margin-top:25px;background:#ff0080;border:none;
-    color:#fff;font-size:1.1em;padding:12px 25px;
-    border-radius:12px;cursor:pointer;
-    box-shadow:0 0 15px #ff0080;transition:.3s;
-  }
-  .close-btn:hover{transform:scale(1.08);box-shadow:0 0 25px #ff0080;}
+/* 💬 Botón flotante WhatsApp */
+.whatsapp-float{
+  position:fixed;bottom:25px;right:25px;
+  background:#25D366;padding:15px;
+  border-radius:50%;box-shadow:0 0 20px #25D366;
+  z-index:20;transition:.3s;
+}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 0 35px #25D366;}
 
-  .footer{
-    font-size:.9em;color:#777;margin-top:60px;
-  }
-  .footer a{color:#0ff;text-decoration:none;}
-  .footer a:hover{text-decoration:underline;}
-
-  @media(max-width:600px){
-    .player-container{width:110px;height:100px;}
-    .player-container iframe{transform:translateY(-210px);scale:1.5;}
-    .radio-box{padding:60px 25px;margin:150px 20px 60px;}
-    .radio-title{font-size:2.4em;}
-    .play-btn{font-size:1.2em;padding:16px 45px;}
-    header h1{font-size:1.4em;}
-  }
+/* 📱 Responsivo */
+@media(max-width:600px){
+  header h1{font-size:1.4em;}
+  .radio-box{padding:50px 20px;margin:140px 15px 60px;}
+  .radio-title{font-size:2.3em;}
+  .radio-sub{font-size:1em;}
+  .play-btn{font-size:1.1em;padding:15px 40px;}
+  .promo-box{padding:40px 20px;margin:0 15px 80px;}
+  .promo-box h2{font-size:2em;}
+}
 </style>
 </head>
 
 <body>
-  <div class="waves">
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-  </div>
+<div class="waves">
+  <div class="wave"></div><div class="wave"></div><div class="wave"></div>
+</div>
 
-  <header>
-    <img src="https://iili.io/KHOiff9.md.png" alt="Logo Radio Imagen">
-    <h1>RADIO IMAGEN</h1>
-    <div class="live-bar" id="liveBar"></div>
-  </header>
+<header>
+  <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen">
+  <h1>RADIO IMAGEN by CARLOS™</h1>
+  <div class="live-bar" id="liveBar"></div>
+</header>
 
-  <div class="radio-box">
-    <h2 class="radio-title">🎧 RADIO IMAGEN <span style="color:#ff0080;">by CARLOS™</span></h2>
-    <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
+<div class="radio-box">
+  <h2 class="radio-title">🎧 RADIO IMAGEN <span style="color:#ff0080;">by CARLOS™</span></h2>
+  <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
 
-    <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ ESCUCHAR RADIO</button>
+  <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ ESCUCHAR RADIO</button>
 
-    <div class="player-box" id="playerBox">
-      <div class="player-container">
-        <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
-      </div>
-      <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
-    </div>
+  <div class="player-box" id="playerBox">
+    <div class="player-container">
+      <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
+    </div>
+    <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
+  </div>
+</div>
 
-    <p class="footer">
-      © RADIO IMAGEN by CARLOS™ | Powered by 
-      <a href="https://ciborg347.onrender.com" target="_blank">Ciborg347</a>
-    </p>
-  </div>
+<div class="promo-box">
+  <h2>📢 ¿Querés publicitar en la radio?</h2>
+  <p>Tu marca, emprendimiento o evento puede sonar en toda la región 🎙️  
+  En RADIO IMAGEN™ ofrecemos spots publicitarios, menciones en vivo y paquetes de difusión personalizados.  
+  Llegá a miles de oyentes cada día con una inversión mínima y grandes resultados. 🚀</p>
+  <a class="promo-btn" href="https://wa.me/5491138219568?text=Hola!%20Quiero%20publicitar%20en%20Radio%20Imagen!" target="_blank">💬 Escribinos ahora</a>
+</div>
 
-  <script>
-    const liveBar = document.getElementById('liveBar');
-    const playBtn = document.getElementById('playButton');
-    const playerBox = document.getElementById('playerBox');
-    const radioIframe = document.getElementById('radioIframe');
+<p class="footer">
+  © RADIO IMAGEN by CARLOS™ | Diseñado y desarrollado por 
+  <a href="https://ciborg347.onrender.com" target="_blank">CIBORG 347™</a>
+</p>
 
-    function abrirPlayer(){
-      playerBox.style.display='block';
-      playBtn.style.display='none';
-      liveBar.classList.add('active');
-    }
+<a href="https://wa.me/5491138219568?text=Hola!%20Quiero%20salir%20al%20aire%20en%20Radio%20Imagen!" target="_blank" class="whatsapp-float">
+  <img src="https://iili.io/J9VvMsu.png" width="40" alt="WhatsApp">
+</a>
 
-    function cerrarPlayer(){
-      playerBox.style.display='n
-one';
-      playBtn.style.display='inline-block';
-      liveBar.classList.remove('active');
-      // 🔇 corta el audio al cerrar
-      radioIframe.src = radioIframe.src;
-    }
-  </script>
+<script>
+const liveBar=document.getElementById('liveBar');
+const playBtn=document.getElementById('playButton');
+const playerBox=document.getElementById('playerBox');
+const radioIframe=document.getElementById('radioIframe');
+
+function abrirPlayer(){
+  playerBox.style.display='block';
+  playBtn.style.display='none';
+  liveBar.classList.add('active');
+}
+function cerrarPlayer(){
+  playerBox.style.display='none';
+  playBtn.style.display='inline-block';
+  liveBar.classList.remove('active');
+  radioIframe.src=radioIframe.src; // cortar audio
+}
+</script>
 </body>
 </html>
