@@ -45,15 +45,17 @@
     100%{transform:translateX(-50%) rotate(360deg);}
   }
 
+  /* 📻 Contenedor principal */
   .radio-box{
     position:relative;
     z-index:2;
     text-align:center;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.85);
     padding:40px 30px;
     border-radius:25px;
     box-shadow:0 0 30px #00ffff;
-    max-width:500px;width:90%;
+    max-width:500px;
+    width:90%;
     animation:neonPulse 4s infinite;
   }
   @keyframes neonPulse{
@@ -67,14 +69,20 @@
     margin-bottom:10px;
   }
   .radio-sub{
-    color:#aaa;font-size:1em;margin-bottom:20px;
+    color:#aaa;
+    font-size:1em;
+    margin-bottom:20px;
   }
 
+  /* 🎵 Botón principal */
   .play-btn{
     background:linear-gradient(135deg,#00ffff,#0080ff);
-    color:#000;border:none;
-    padding:18px 40px;border-radius:50px;
-    font-size:1.4em;cursor:pointer;
+    color:#000;
+    border:none;
+    padding:18px 40px;
+    border-radius:50px;
+    font-size:1.4em;
+    cursor:pointer;
     text-shadow:0 0 6px #0ff;
     box-shadow:0 0 20px #00ffff;
     transition:.3s;
@@ -84,8 +92,10 @@
     box-shadow:0 0 35px #00ffff;
   }
 
+  /* 🎧 Player */
   .player-box{
-    margin-top:25px;display:none;
+    margin-top:25px;
+    display:none;
     animation:fadeIn .8s ease forwards;
   }
   @keyframes fadeIn{
@@ -94,17 +104,29 @@
   }
 
   .player{
-    position:relative;width:100%;
-    border-radius:16px;overflow:hidden;
+    position:relative;
+    width:100%;
+    border-radius:16px;
+    overflow:hidden;
     box-shadow:0 0 25px rgba(0,255,255,0.5);
   }
   .player iframe{
-    width:100%;height:150px;border:none;display:block;background:#000;
+    width:100%;
+    height:150px;
+    border:none;
+    display:block;
+    background:#000;
   }
   .onair{
-    position:absolute;top:0;left:0;width:100%;height:100%;
-    display:flex;justify-content:center;align-items:center;
-    pointer-events:none;font-size:1.3em;color:#0ff;
+    position:absolute;
+    top:0;left:0;
+    width:100%;height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+    font-size:1.3em;
+    color:#0ff;
     animation:pulse 2s infinite;
   }
   @keyframes pulse{
@@ -112,17 +134,25 @@
     50%{opacity:.4;filter:drop-shadow(0 0 2px #0ff);}
   }
 
+  /* ❌ Botón de cierre */
   .close-btn{
-    margin-top:12px;background:#ff0080;border:none;
-    color:#fff;font-size:1em;padding:8px 15px;
-    border-radius:8px;cursor:pointer;
-    box-shadow:0 0 10px #ff0080;transition:.3s;
+    margin-top:12px;
+    background:#ff0080;
+    border:none;
+    color:#fff;
+    font-size:1em;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 0 10px #ff0080;
+    transition:.3s;
   }
   .close-btn:hover{
     transform:scale(1.05);
     box-shadow:0 0 20px #ff0080;
   }
 
+  /* ⚙️ Footer */
   .footer{
     font-size:.8em;
     color:#666;
@@ -139,12 +169,14 @@
 </head>
 
 <body>
+  <!-- 🌊 Fondo animado -->
   <div class="waves">
     <div class="wave"></div>
     <div class="wave"></div>
     <div class="wave"></div>
   </div>
 
+  <!-- 🎧 Caja principal -->
   <div class="radio-box">
     <h2 class="radio-title">🎧 RADIO IMAGEN <span style="color:#ff0080;">by CARLOS™</span></h2>
     <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
@@ -159,16 +191,20 @@
       <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
     </div>
 
-    <p class="footer">© RADIO IMAGEN by CARLOS™ | Powered by <a href="https://ciborg347.onrender.com" target="_blank">Ciborg347</a></p>
+    <p class="footer">
+      © RADIO IMAGEN by CARLOS™ | Powered by 
+      <a href="https://ciborg347.onrender.com" target="_blank">Ciborg347</a>
+    </p>
   </div>
 
-<script>
-function abrirPlayer(){
-  document.getElementById('playerBox').style.display='block';
-}
-function cerrarPlayer(){
-  document.getElementById('playerBox').style.display='none';
-}
-</script>
+  <!-- ⚙️ Scripts -->
+  <script>
+    function abrirPlayer(){
+      document.getElementById('playerBox').style.display='block';
+    }
+    function cerrarPlayer(){
+      document.getElementById('playerBox').style.display='none';
+    }
+  </script>
 </body>
 </html>
