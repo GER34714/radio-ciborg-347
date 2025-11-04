@@ -53,7 +53,7 @@ header{
   top:0;left:0;width:100%;
   background:rgba(0,0,0,0.9);
   box-shadow:0 0 25px #00ffff;
-  padding:10px 0;
+  padding:15px 0;
   text-align:center;
   z-index:10;
 }
@@ -61,7 +61,16 @@ header h1{
   font-family:'Luckiest Guy',cursive;
   font-size:2em;
   color:#00eaff;
-  text-shadow:0 0 18px #00ffff;
+  text-shadow:0 0 25px #00ffff,0 0 35px #ff00ff;
+  background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:300%;
+  animation:neonFlow 5s infinite linear;
+}
+@keyframes neonFlow{
+  0%{background-position:0%;}
+  100%{background-position:100%;}
 }
 .live-bar{
   width:100%;height:6px;
@@ -78,7 +87,7 @@ header h1{
   border-radius:30px;
   box-shadow:0 0 40px #00ffff;
   max-width:700px;
-  margin:160px auto 100px;
+  margin:190px auto 100px;
   padding:80px 50px;
   text-align:center;
   animation:neonPulse 5s infinite;
@@ -87,26 +96,22 @@ header h1{
   0%,100%{box-shadow:0 0 40px #00ffff;}
   50%{box-shadow:0 0 15px #00ffff;}
 }
-.radio-title{
-  font-family:'Luckiest Guy',cursive;
-  font-size:3em;
-  text-shadow:0 0 25px #00ffff,0 0 40px #ff0080;
-  margin-bottom:10px;
-}
-.by-text{
-  font-size:0.9em;
-  color:#ff0080;
-  text-shadow:0 0 8px #ff0080;
-  font-weight:600;
-}
 
-/* 🖼️ Logo en el centro */
+/* 🖼️ Logo animado */
 .radio-logo{
   display:block;
-  margin:30px auto 20px;
-  width:180px;
-  max-width:80%;
-  filter:drop-shadow(0 0 15px #00ffff);
+  margin:30px auto 30px;
+  width:210px;
+  max-width:85%;
+  filter:drop-shadow(0 0 25px #00ffff);
+  animation:logoPulse 4s infinite ease-in-out;
+}
+@keyframes logoPulse{
+  0%{filter:drop-shadow(0 0 25px #00ffff);}
+  25%{filter:drop-shadow(0 0 35px #ff00ff);}
+  50%{filter:drop-shadow(0 0 25px #ffff00);}
+  75%{filter:drop-shadow(0 0 35px #00ffff);}
+  100%{filter:drop-shadow(0 0 25px #00ffff);}
 }
 
 /* Subtexto */
@@ -116,6 +121,13 @@ header h1{
 }
 
 /* ▶️ Botón y player centrados */
+.play-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+}
 .play-btn{
   background:linear-gradient(135deg,#00ffff,#ff0080);
   color:#000;border:none;
@@ -124,13 +136,10 @@ header h1{
   text-shadow:0 0 6px #fff;
   box-shadow:0 0 25px #00ffff;
   transition:.3s;
-  margin:auto;
-  display:block;
 }
 .play-btn:hover{transform:scale(1.08);box-shadow:0 0 45px #ff00ff;}
 
 .player-box{
-  margin-top:50px;
   display:none;
   animation:fadeIn 1s ease forwards;
   display:flex;
@@ -214,9 +223,8 @@ header h1{
 
 /* 📱 Responsivo */
 @media(max-width:600px){
-  .radio-logo{width:140px;}
-  .radio-title{font-size:2.3em;}
-  .by-text{font-size:0.8em;}
+  header h1{font-size:1.4em;}
+  .radio-logo{width:160px;}
   .radio-sub{font-size:1em;}
   .play-btn{font-size:1.1em;padding:15px 40px;}
 }
@@ -229,23 +237,23 @@ header h1{
 </div>
 
 <header>
-  <h1>RADIO IMAGEN</h1>
+  <h1>RADIO IMAGEN by CARLOS™</h1>
   <div class="live-bar" id="liveBar"></div>
 </header>
 
 <div class="radio-box">
-  <h2 class="radio-title">🎧 RADIO IMAGEN</h2>
-  <p class="by-text">by CARLOS™</p>
   <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen" class="radio-logo">
   <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
 
-  <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ ESCUCHAR RADIO</button>
+  <div class="play-container">
+    <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ ESCUCHAR RADIO</button>
 
-  <div class="player-box" id="playerBox">
-    <div class="player-container">
-      <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
+    <div class="player-box" id="playerBox">
+      <div class="player-container">
+        <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
+      </div>
+      <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
     </div>
-    <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
   </div>
 </div>
 
