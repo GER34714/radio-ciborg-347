@@ -40,7 +40,7 @@
     100%{transform:translateX(-50%) rotate(360deg);}
   }
 
-  /* 🔝 Header fijo */
+  /* 🔝 Header */
   header{
     position:fixed;
     top:0;left:0;width:100%;
@@ -50,9 +50,7 @@
     text-align:center;
     z-index:10;
   }
-  header img{
-    height:50px;vertical-align:middle;
-  }
+  header img{height:50px;vertical-align:middle;}
   header h1{
     display:inline-block;
     font-size:1.8em;
@@ -61,22 +59,16 @@
     margin-left:10px;
     vertical-align:middle;
   }
-
   .live-bar{
     width:100%;height:6px;
     background:linear-gradient(90deg,#ff0080,#ff0,#00ffff);
     box-shadow:0 0 25px #0ff;
-    animation:none;
-  }
-  .live-bar.active{animation:glow 1.5s infinite alternate;}
-  @keyframes glow{
-    0%{opacity:.4;filter:blur(2px);}
-    100%{opacity:1;filter:blur(6px);}
   }
 
   /* 📻 Caja principal */
   .radio-box{
-    position:relative;z-index:2;
+    position:relative;
+    z-index:2;
     background:rgba(0,0,0,0.85);
     border-radius:30px;
     box-shadow:0 0 35px #00ffff;
@@ -97,15 +89,20 @@
     margin-bottom:25px;
   }
   .radio-sub{
-    color:#aaa;font-size:1.1em;margin-bottom:40px;
+    color:#aaa;
+    font-size:1.1em;
+    margin-bottom:40px;
   }
 
   /* 🎵 Botón principal */
   .play-btn{
     background:linear-gradient(135deg,#00ffff,#0080ff);
-    color:#000;border:none;
-    padding:20px 60px;border-radius:50px;
-    font-size:1.6em;cursor:pointer;
+    color:#000;
+    border:none;
+    padding:20px 60px;
+    border-radius:50px;
+    font-size:1.6em;
+    cursor:pointer;
     text-shadow:0 0 6px #0ff;
     box-shadow:0 0 25px #00ffff;
     transition:.3s;
@@ -115,7 +112,7 @@
     box-shadow:0 0 40px #00ffff;
   }
 
-  /* 🎧 Player recortado */
+  /* 🎧 Player recortado tipo cuadrado */
   .player-box{
     margin-top:50px;
     display:none;
@@ -127,40 +124,52 @@
   }
 
   .player-container{
-    width:100%;
-    height:80px; /* más chico, visible solo el control */
+    width:160px;
+    height:160px;
+    margin:auto;
     overflow:hidden;
-    border-radius:16px;
+    border-radius:25px;
     box-shadow:0 0 30px rgba(0,255,255,0.5);
     position:relative;
   }
   .player-container iframe{
     width:100%;
-    height:300px; /* altura original del player */
+    height:300px;
     border:none;
-    transform:translateY(-215px); /* recorte calibrado */
+    transform:translateY(-210px); /* recorte calibrado para mostrar solo el botón PLAY */
+    scale:1.4; /* agranda un poco el botón */
   }
 
   .close-btn{
-    margin-top:20px;background:#ff0080;border:none;
-    color:#fff;font-size:1.1em;padding:12px 25px;
-    border-radius:12px;cursor:pointer;
-    box-shadow:0 0 15px #ff0080;transition:.3s;
+    margin-top:25px;
+    background:#ff0080;
+    border:none;
+    color:#fff;
+    font-size:1.1em;
+    padding:12px 25px;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 0 15px #ff0080;
+    transition:.3s;
   }
   .close-btn:hover{
     transform:scale(1.08);
     box-shadow:0 0 25px #ff0080;
   }
 
+  /* ⚙️ Footer */
   .footer{
-    font-size:.9em;color:#777;margin-top:60px;
+    font-size:.9em;
+    color:#777;
+    margin-top:60px;
   }
-  .footer a{color:#0ff;text-decoration:none;}
+  .footer a{
+    color:#0ff;
+    text-decoration:none;
+  }
   .footer a:hover{text-decoration:underline;}
 
   @media(max-width:600px){
-    .player-container{height:70px;}
-    .player-container iframe{transform:translateY(-205px);}
     .radio-box{padding:60px 25px;margin:150px 20px 60px;}
     .radio-title{font-size:2.4em;}
     .play-btn{font-size:1.2em;padding:16px 45px;}
@@ -170,18 +179,21 @@
 </head>
 
 <body>
+  <!-- 🌊 Fondo -->
   <div class="waves">
     <div class="wave"></div>
     <div class="wave"></div>
     <div class="wave"></div>
   </div>
 
+  <!-- 🔝 Header -->
   <header>
     <img src="https://iili.io/KHOiff9.md.png" alt="Logo Radio Imagen">
     <h1>RADIO IMAGEN</h1>
     <div class="live-bar" id="liveBar"></div>
   </header>
 
+  <!-- 🎧 Caja principal -->
   <div class="radio-box">
     <h2 class="radio-title">🎧 RADIO IMAGEN <span style="color:#ff0080;">by CARLOS™</span></h2>
     <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
