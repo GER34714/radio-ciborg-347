@@ -21,7 +21,7 @@
     overflow-x:hidden;
   }
 
-  /* 🌊 Fondo animado de ondas neón */
+  /* 🌊 Fondo animado */
   .waves{
     position:fixed;
     top:0;left:0;width:100%;height:100%;
@@ -29,11 +29,9 @@
     overflow:hidden;z-index:0;
   }
   .wave{
-    position:absolute;
-    bottom:0;width:200%;height:200%;
+    position:absolute;bottom:0;width:200%;height:200%;
     background:rgba(0,255,255,0.05);
-    border-radius:45%;
-    animation:waveMove 12s infinite linear;
+    border-radius:45%;animation:waveMove 12s infinite linear;
   }
   .wave:nth-child(2){animation-duration:16s;opacity:.6;}
   .wave:nth-child(3){animation-duration:20s;opacity:.4;}
@@ -42,16 +40,50 @@
     100%{transform:translateX(-50%) rotate(360deg);}
   }
 
+  /* 🔝 Header fijo */
+  header{
+    position:fixed;
+    top:0;left:0;width:100%;
+    background:rgba(0,0,0,0.85);
+    box-shadow:0 0 20px #00ffff;
+    padding:10px 0;
+    text-align:center;
+    z-index:10;
+  }
+  header img{
+    height:50px;
+    vertical-align:middle;
+  }
+  header h1{
+    display:inline-block;
+    font-size:1.8em;
+    color:#0ff;
+    text-shadow:0 0 12px #0ff;
+    margin-left:10px;
+    vertical-align:middle;
+  }
+
+  .live-bar{
+    width:100%;height:6px;
+    background:linear-gradient(90deg,#ff0080,#ff0,#00ffff);
+    box-shadow:0 0 25px #0ff;
+    animation:none;
+  }
+  .live-bar.active{animation:glow 1.5s infinite alternate;}
+  @keyframes glow{
+    0%{opacity:.4;filter:blur(2px);}
+    100%{opacity:1;filter:blur(6px);}
+  }
+
   /* 📻 Caja principal */
   .radio-box{
-    position:relative;
-    z-index:2;
+    position:relative;z-index:2;
     background:rgba(0,0,0,0.85);
     border-radius:30px;
     box-shadow:0 0 35px #00ffff;
     max-width:700px;
-    margin:100px auto;
-    padding:70px 40px;
+    margin:160px auto 100px;
+    padding:80px 50px;
     text-align:center;
     animation:neonPulse 5s infinite;
   }
@@ -66,20 +98,15 @@
     margin-bottom:25px;
   }
   .radio-sub{
-    color:#aaa;
-    font-size:1.1em;
-    margin-bottom:40px;
+    color:#aaa;font-size:1.1em;margin-bottom:40px;
   }
 
   /* 🎵 Botón principal */
   .play-btn{
     background:linear-gradient(135deg,#00ffff,#0080ff);
-    color:#000;
-    border:none;
-    padding:20px 60px;
-    border-radius:50px;
-    font-size:1.6em;
-    cursor:pointer;
+    color:#000;border:none;
+    padding:20px 60px;border-radius:50px;
+    font-size:1.6em;cursor:pointer;
     text-shadow:0 0 6px #0ff;
     box-shadow:0 0 25px #00ffff;
     transition:.3s;
@@ -90,41 +117,20 @@
   }
 
   /* 🎧 Player */
-  .player-box{
-    margin-top:50px;
-    display:none;
-    animation:fadeIn 1s ease forwards;
-  }
-  @keyframes fadeIn{
-    from{opacity:0;transform:translateY(40px);}
-    to{opacity:1;transform:translateY(0);}
-  }
-
+  .player-box{margin-top:50px;display:none;animation:fadeIn 1s ease forwards;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
   .player{
-    position:relative;
-    width:100%;
-    border-radius:20px;
-    overflow:hidden;
+    position:relative;width:100%;
+    border-radius:20px;overflow:hidden;
     box-shadow:0 0 35px rgba(0,255,255,0.5);
   }
   .player iframe{
-    width:100%;
-    height:170px;
-    border:none;
-    display:block;
-    background:#000;
+    width:100%;height:170px;border:none;display:block;background:#000;
   }
   .onair{
-    position:absolute;
-    top:0;left:0;
-    width:100%;height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    pointer-events:none;
-    font-size:1.5em;
-    color:#0ff;
-    animation:pulse 2s infinite;
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    display:flex;justify-content:center;align-items:center;
+    pointer-events:none;font-size:1.5em;color:#0ff;animation:pulse 2s infinite;
   }
   @keyframes pulse{
     0%,100%{opacity:1;filter:drop-shadow(0 0 10px #0ff);}
@@ -133,16 +139,10 @@
 
   /* ❌ Botón de cierre */
   .close-btn{
-    margin-top:20px;
-    background:#ff0080;
-    border:none;
-    color:#fff;
-    font-size:1.1em;
-    padding:12px 25px;
-    border-radius:12px;
-    cursor:pointer;
-    box-shadow:0 0 15px #ff0080;
-    transition:.3s;
+    margin-top:20px;background:#ff0080;border:none;
+    color:#fff;font-size:1.1em;padding:12px 25px;
+    border-radius:12px;cursor:pointer;
+    box-shadow:0 0 15px #ff0080;transition:.3s;
   }
   .close-btn:hover{
     transform:scale(1.08);
@@ -151,38 +151,36 @@
 
   /* ⚙️ Footer */
   .footer{
-    font-size:.9em;
-    color:#777;
-    margin-top:60px;
+    font-size:.9em;color:#777;margin-top:60px;
   }
-  .footer a{
-    color:#0ff;
-    text-decoration:none;
-  }
-  .footer a:hover{
-    text-decoration:underline;
-  }
+  .footer a{color:#0ff;text-decoration:none;}
+  .footer a:hover{text-decoration:underline;}
 
   /* 📱 Responsivo */
   @media(max-width:600px){
-    .radio-box{
-      padding:60px 25px;
-      margin:80px 20px;
-    }
-    .radio-title{font-size:2.2em;}
+    .radio-box{padding:60px 25px;margin:150px 20px 60px;}
+    .radio-title{font-size:2.4em;}
     .play-btn{font-size:1.2em;padding:16px 45px;}
     .player iframe{height:150px;}
+    header h1{font-size:1.4em;}
   }
 </style>
 </head>
 
 <body>
-  <!-- 🌊 Fondo animado -->
+  <!-- 🌊 Fondo -->
   <div class="waves">
     <div class="wave"></div>
     <div class="wave"></div>
     <div class="wave"></div>
   </div>
+
+  <!-- 🔝 Header -->
+  <header>
+    <img src="https://iili.io/KHOiff9.md.png" alt="Logo Radio Imagen">
+    <h1>RADIO IMAGEN</h1>
+    <div class="live-bar" id="liveBar"></div>
+  </header>
 
   <!-- 🎧 Caja principal -->
   <div class="radio-box">
@@ -193,7 +191,7 @@
 
     <div class="player-box" id="playerBox">
       <div class="player">
-        <iframe src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
+        <iframe id="radioFrame" src="about:blank" scrolling="no"></iframe>
         <div class="onair">🔴 ON AIR</div>
       </div>
       <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
@@ -205,15 +203,25 @@
     </p>
   </div>
 
-  <!-- ⚙️ Scripts -->
+  <!-- ⚙️ Script -->
   <script>
+    const liveBar = document.getElementById('liveBar');
+    const playBtn = document.getElementById('playButton');
+    const playerBox = document.getElementById('playerBox');
+    const radioFrame = document.getElementById('radioFrame');
+
     function abrirPlayer(){
-      document.getElementById('playerBox').style.display='block';
-      document.getElementById('playButton').style.display='none';
+      radioFrame.src = "https://zeno.fm/player/radio-imagen/";
+      playerBox.style.display='block';
+      playBtn.style.display='none';
+      liveBar.classList.add('active');
     }
+
     function cerrarPlayer(){
-      document.getElementById('playerBox').style.display='none';
-      document.getElementById('playButton').style.display='inline-block';
+      radioFrame.src = "about:blank"; // 🔇 esto corta el sonido
+      playerBox.style.display='none';
+      playBtn.style.display='inline-block';
+      liveBar.classList.remove('active');
     }
   </script>
 </body>
