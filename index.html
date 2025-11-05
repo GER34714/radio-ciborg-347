@@ -45,7 +45,7 @@ body{
   margin:40px auto;
   padding:50px 30px;
   animation:neonPulse 5s infinite;
-  overflow:hidden; /* 🔥 Para que el texto no se salga del marco */
+  overflow:hidden;
 }
 @keyframes neonPulse{
   0%,100%{box-shadow:0 0 20px #00ffff;}
@@ -112,6 +112,7 @@ body{
 .oyentes-bar span {
   color: #ffff00;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 @keyframes moverTexto {
   0% { transform: translateX(100%); }
@@ -273,7 +274,7 @@ body{
 
   <!-- 🔊 Oyentes dinámicos -->
   <div class="oyentes-bar">
-    <p>🔊 Oyentes en este momento: <span id="contadorOyentes">120</span></p>
+    <p>🔊 Oyentes en este momento: <span id="contadorOyentes">816</span></p>
   </div>
 
   <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
@@ -329,18 +330,18 @@ function compartir(){
   else{alert('Copiá este enlace para compartir:\n'+shareData.url);}
 }
 
-/* 📊 Contador dinámico realista (sube y baja) */
-let oyentes = 120;
+/* 📊 Contador dinámico (sube y baja entre 816 y 1073) */
+let oyentes = 816;
 const contador = document.getElementById('contadorOyentes');
 
 function cambiarOyentes() {
-  const cambio = Math.floor(Math.random() * 11) - 5; // entre -5 y +5
+  const cambio = Math.floor(Math.random() * 13) - 6; // entre -6 y +6
   oyentes += cambio;
-  if (oyentes < 80) oyentes = 80;     // no baja demasiado
-  if (oyentes > 999) oyentes = 999;   // límite superior
+  if (oyentes < 816) oyentes = 816;
+  if (oyentes > 1073) oyentes = 1073;
   contador.textContent = oyentes;
 }
-setInterval(cambiarOyentes, 4000); // cada 4 seg cambia
+setInterval(cambiarOyentes, 3500); // cada 3.5 seg cambia
 </script>
 </body>
 </html>
