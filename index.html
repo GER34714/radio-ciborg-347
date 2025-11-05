@@ -87,8 +87,28 @@ body{
 .radio-sub{
   color:#fff;
   font-size:1.1em;
-  margin-bottom:25px;
+  margin-bottom:15px;
   text-shadow:0 0 6px rgba(0,255,255,0.3);
+}
+
+/* 🔄 Barra de oyentes dinámica */
+.oyentes-bar {
+  margin: 10px auto 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 90%;
+  font-size: 1.1em;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  animation: moverTexto 14s linear infinite;
+}
+@keyframes moverTexto {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.oyentes-bar span {
+  color: #ffff00;
+  font-weight: 600;
 }
 
 /* Botón */
@@ -244,6 +264,11 @@ body{
   <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen" class="radio-logo">
   <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
 
+  <!-- 🔊 Oyentes dinámicos -->
+  <div class="oyentes-bar">
+    🔊 Oyentes en este momento: <span id="contadorOyentes">120</span>
+  </div>
+
   <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
 
   <div class="player-box" id="playerBox">
@@ -296,6 +321,16 @@ function compartir(){
   if(navigator.share){navigator.share(shareData);}
   else{alert('Copiá este enlace para compartir:\n'+shareData.url);}
 }
+
+/* 📈 Contador progresivo de oyentes */
+let oyentes = 120; // valor inicial
+const contador = document.getElementById('contadorOyentes');
+function aumentarOyentes() {
+  const incremento = Math.floor(Math.random() * 5) + 1; // suma entre 1 y 5
+  oyentes += incremento;
+  contador.textContent = oyentes;
+}
+setInterval(aumentarOyentes, 5000); // cada 5 segundos sube
 </script>
 </body>
 </html>
