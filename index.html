@@ -1,335 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎧 Radio Imagen™ | En Vivo 24hs</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MMG™ | Contrataciones de la Movida Tropical</title>
 
-<link rel="icon" type="image/png" href="https://iili.io/KZ3YpR4.md.png">
-<link rel="shortcut icon" href="https://iili.io/KZ3YpR4.md.png" type="image/png">
+  <link rel="icon" type="image/png" href="https://iili.io/KtXqRHJ.md.png" />
+  <meta property="og:title" content="MMG Manager Music Group™ | Contrataciones Oficiales">
+  <meta property="og:description" content="Catálogo oficial de artistas de la movida tropical. Contratá con seguridad y respaldo profesional.">
+  <meta property="og:image" content="https://iili.io/KtXqRHJ.md.png">
+  <meta name="theme-color" content="#b97cff">
 
-<meta property="og:title" content="Radio Imagen by Carlos™ | Música, difusión y buena vibra 24hs 🎵">
-<meta property="og:description" content="Sintonizá RADIO IMAGEN™ – música sin pausas, difusión, entrevistas y buena energía. Escuchanos en vivo ahora 🎧">
-<meta property="og:image" content="https://iili.io/KZ3YpR4.md.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://radioimagen347.onrender.com">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#00ffff">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://iili.io/KtWbyCv.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    /* Fondo oscuro sutil para mejorar contraste del texto */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
 
-@font-face {
-  font-family: 'Amadeus';
-  src: url('AMADEUS_.TTF') format('truetype');
-}
+    header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
 
-/* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#000;
-  color:#0ff;
-  text-align:center;
-  overflow-x:hidden;
-  padding:20px;
-}
+    header img {
+      width: 180px;
+      filter: drop-shadow(0 0 15px #b97cff);
+      animation: pulsoLogo 3s infinite ease-in-out;
+    }
 
-/* Caja principal */
-.radio-box{
-  position:relative;
-  background:rgba(0,0,0,0.8);
-  border-radius:25px;
-  box-shadow:0 0 20px #00ffff;
-  max-width:600px;
-  margin:40px auto;
-  padding:50px 30px;
-  animation:neonPulse 5s infinite;
-  overflow:hidden;
-}
-@keyframes neonPulse{
-  0%,100%{box-shadow:0 0 20px #00ffff;}
-  50%{box-shadow:0 0 10px #ff00ff;}
-}
+    @keyframes pulsoLogo {
+      0%, 100% { filter: drop-shadow(0 0 10px #b97cff); }
+      50% { filter: drop-shadow(0 0 25px #d4af37); }
+    }
 
-/* Título */
-.radio-title{
-  font-family:'Amadeus',sans-serif;
-  font-size:2.5em;
-  letter-spacing:1px;
-  margin-bottom:20px;
-  background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-size:300%;
-  animation:neonFlow 6s infinite linear;
-  text-shadow:0 0 15px rgba(0,255,255,0.3);
-}
-@keyframes neonFlow{
-  0%{background-position:0%;}
-  100%{background-position:100%;}
-}
+    header h1 {
+      font-size: 2rem;
+      margin-top: 15px;
+      color: #fff;
+      text-shadow: 0 0 15px #b97cff;
+      letter-spacing: 1px;
+    }
 
-/* Logo */
-.radio-logo{
-  display:block;
-  margin:20px auto 30px;
-  width:180px;
-  max-width:85%;
-  animation:logoPulse 4s infinite ease-in-out;
-}
-@keyframes logoPulse{
-  0%{filter:drop-shadow(0 0 10px #00ffff);}
-  50%{filter:drop-shadow(0 0 15px #ff00ff);}
-  100%{filter:drop-shadow(0 0 10px #00ffff);}
-}
+    .carrousel {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 40px 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .carrousel::-webkit-scrollbar { display: none; }
 
-/* Subtexto */
-.radio-sub{
-  color:#fff;
-  font-size:1.1em;
-  margin-bottom:15px;
-  text-shadow:0 0 6px rgba(0,255,255,0.3);
-}
+    .artista {
+      flex: 0 0 80%;
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(185,124,255,0.4);
+      scroll-snap-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s;
+      backdrop-filter: blur(5px);
+    }
+    .artista:hover { transform: scale(1.03); }
 
-/* 🔄 Barra de oyentes dinámica */
-.oyentes-bar {
-  position: relative;
-  margin: 10px auto 25px;
-  width: 100%;
-  height: 30px;
-  overflow: hidden;
-}
-.oyentes-bar p {
-  position: absolute;
-  width: 100%;
-  color: #00ffff;
-  font-size: 1.1em;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-  animation: moverTexto 10s linear infinite;
-  white-space: nowrap;
-}
-.oyentes-bar span {
-  color: #ffff00;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-@keyframes moverTexto {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
+    .artista img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-bottom: 3px solid #b97cff;
+    }
 
-/* Botón */
-.play-btn{
-  background:linear-gradient(135deg,#00ffff,#ff0080);
-  color:#000;
-  border:none;
-  padding:15px 50px;
-  border-radius:50px;
-  font-size:1.3em;
-  cursor:pointer;
-  text-shadow:0 0 5px #fff;
-  box-shadow:0 0 15px #00ffff;
-  transition:.3s;
-}
-.play-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #ff00ff;
-}
+    .info {
+      padding: 20px;
+      text-align: center;
+    }
 
-/* Player */
-.player-box{
-  display:none;
-  margin-top:30px;
-  animation:fadeIn 1s ease forwards;
-}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
-}
-.player-container{
-  width:120px;
-  height:100px;
-  margin:auto;
-  overflow:hidden;
-  border-radius:20px;
-  box-shadow:0 0 15px rgba(0,255,255,0.5);
-}
-.player-container iframe{
-  width:100%;
-  height:300px;
-  border:none;
-  transform:translateY(-200px);
-  scale:1.4;
-}
+    .info h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #b97cff;
+    }
 
-/* Botón cerrar */
-.close-btn{
-  margin-top:20px;
-  background:#ff0080;
-  border:none;
-  color:#fff;
-  font-size:1em;
-  padding:10px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  box-shadow:0 0 10px #ff0080;
-  transition:.3s;
-}
-.close-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px #ff0080;
-}
+    .info p {
+      font-size: 0.95rem;
+      color: #ddd;
+      line-height: 1.5em;
+    }
 
-/* Publicidad */
-.promo-box{
-  max-width:600px;
-  margin:60px auto;
-  background:rgba(0,0,0,0.8);
-  border-radius:20px;
-  padding:45px 25px;
-  box-shadow:0 0 20px rgba(255,0,255,0.4);
-}
-.promo-box h2{
-  color:#ff00ff;
-  font-size:1.9em;
-  margin-bottom:15px;
-  text-shadow:0 0 10px rgba(255,0,255,0.4);
-}
-.promo-box h2 span{
-  display:block;
-  font-family:'Amadeus',sans-serif;
-  font-size:1.2em;
-  color:#00ffff;
-  text-shadow:0 0 12px #00ffff,0 0 18px #ff00ff;
-}
-.promo-box p{
-  color:#eaeaea;
-  font-size:1em;
-  line-height:1.7em;
-  margin-bottom:25px;
-  text-shadow:0 0 5px rgba(0,255,255,0.3);
-  white-space:pre-line;
-}
-.promo-btn,.share-btn{
-  display:inline-block;
-  border:none;
-  border-radius:50px;
-  text-decoration:none;
-  font-size:1.1em;
-  padding:12px 35px;
-  transition:.3s;
-}
-.promo-btn{
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;
-  box-shadow:0 0 15px #25D366;
-}
-.promo-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #25D366;
-}
-.share-btn{
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;
-  margin-top:12px;
-  box-shadow:0 0 15px #25D366;
-}
-.share-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #25D366;
-}
+    .botones {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0 60px;
+    }
 
-/* Footer */
-.footer{
-  color:#888;
-  font-size:0.9em;
-  margin:40px 0 20px;
-}
-.footer a{
-  color:#00ffff;
-  text-decoration:none;
-}
-.footer a:hover{text-decoration:underline;}
+    .btn {
+      background: linear-gradient(90deg, #b97cff, #d4af37);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(0,0,0,.6);
+      box-shadow: 0 0 20px #b97cff;
+      transition: all .3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #d4af37;
+    }
 
-/* Responsive */
-@media(max-width:600px){
-  body{padding:10px;}
-  .radio-box,.promo-box{padding:30px 20px;}
-  .radio-title{font-size:2em;}
-  .radio-logo{width:150px;}
-  .player-container{width:100px;height:85px;}
-  .player-container iframe{transform:translateY(-190px);scale:1.3;}
-  .play-btn{font-size:1.1em;padding:12px 35px;}
-  .promo-box h2{font-size:1.6em;}
-}
-</style>
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
-
 <body>
-<div class="radio-box">
-  <h2 class="radio-title">Radio Imagen™</h2>
-  <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen" class="radio-logo">
-  <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
+  <header>
+    <img src="https://iili.io/KtXqRHJ.md.png" alt="MMG Manager Music Group">
+    <h1>MMG™ | Contrataciones Oficiales de la Movida Tropical</h1>
+  </header>
 
-  <div class="oyentes-bar">
-    <p>🔊 Oyentes en este momento: <span id="contadorOyentes">521</span></p>
-  </div>
-
-  <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
-
-  <div class="player-box" id="playerBox">
-    <div class="player-container">
-      <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
+  <section class="carrousel">
+    <div class="artista">
+      <img src="https://iili.io/2ZKz9lb.jpg" alt="Banda Vamos Cuarteto">
+      <div class="info">
+        <h2>Banda Vamos Cuarteto</h2>
+        <p>Una propuesta única con energía y ritmo cordobés. Ideales para fiestas, festivales y eventos masivos. ¡Garantía de diversión total!</p>
+      </div>
     </div>
-    <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
+    <div class="artista">
+      <img src="https://iili.io/2ZKzPzB.jpg" alt="Re Piola">
+      <div class="info">
+        <h2>Re Piola</h2>
+        <p>Jóvenes, potentes y carismáticos. Re Piola lleva el cuarteto a otro nivel con su frescura y conexión con el público.</p>
+      </div>
+    </div>
+    <div class="artista">
+      <img src="https://iili.io/2ZKzY4Q.jpg" alt="Andy el Cumbiero">
+      <div class="info">
+        <h2>Andy el Cumbiero</h2>
+        <p>Una de las voces más queridas de la movida tropical. Su presencia escénica y carisma lo hacen un show imperdible.</p>
+      </div>
+    </div>
+    <div class="artista">
+      <img src="https://iili.io/2ZKz6Ct.jpg" alt="Flor de Piedra">
+      <div class="info">
+        <h2>Flor de Piedra</h2>
+        <p>Un clásico de la cumbia argentina. Su historia, estilo y presencia garantizan un espectáculo inolvidable.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="botones">
+    <button class="btn" onclick="window.open('https://wa.me/5491138219568','_blank')">📲 Contratar Ahora</button>
+    <button class="btn" onclick="window.open('https://instagram.com/mmgcontrataciones','_blank')">📸 Ver Instagram</button>
   </div>
-</div>
 
-<div class="promo-box">
-  <h2>📢 ¡Hacemos la publicidad de tu marca en<br><span>RADIO IMAGEN™</span></h2>
-  <p>🎧 Convertí tu negocio en protagonista del aire.
-
-😎 Promocioná tu marca, producto o evento con menciones en vivo.
-
-🎙️ Spots profesionales y presencia en nuestra programación.
-
-🚀 No pierdas la oportunidad de estar donde todos escuchan.</p>
-
-  <a class="promo-btn" href="https://wa.me/5491157343551?text=Hola!%20Quiero%20publicitar%20en%20Radio%20Imagen!" target="_blank">💬 Quiero publicitar ahora</a>
-  <a class="share-btn" href="https://wa.me/?text=🎧%20Escuchá%20Radio%20Imagen™%20en%20vivo!%20👉%20https://radioimagen.onrender.com" target="_blank">📤 Compartir por WhatsApp</a>
-</div>
-
-<p class="footer">Diseñado y desarrollado por <a href="https://ciborg347.onrender.com" target="_blank">Ciborg 347™</a></p>
-
-<script>
-const playBtn=document.getElementById('playButton');
-const playerBox=document.getElementById('playerBox');
-const radioIframe=document.getElementById('radioIframe');
-
-function abrirPlayer(){
-  playerBox.style.display='block';
-  playBtn.style.display='none';
-  window.scrollTo({top:playerBox.offsetTop-100,behavior:'smooth'});
-}
-function cerrarPlayer(){
-  playerBox.style.display='none';
-  playBtn.style.display='inline-block';
-  radioIframe.src=radioIframe.src;
-}
-
-/* 📊 Contador dinámico suave */
-let oyentes = 521;
-const contador = document.getElementById('contadorOyentes');
-function cambiarOyentes() {
-  const probSubir = Math.random() < 0.7;
-  let cambio = Math.floor(Math.random() * 6) + 1;
-  if (probSubir) oyentes += cambio; else oyentes -= Math.floor(Math.random() * 3);
-  if (oyentes < 500) oyentes = 500;
-  if (oyentes > 1100) oyentes = 1100;
-  contador.textContent = oyentes;
-}
-setInterval(cambiarOyentes, 4000);
-</script>
+  <footer>
+    © 2025 MMG Manager Music Group™ · Todos los derechos reservados · Powered by Ciborg347™
+  </footer>
 </body>
 </html>
