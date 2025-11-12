@@ -20,258 +20,243 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 @font-face {
-  font-family: 'Amadeus';
-  src: url('AMADEUS_.TTF') format('truetype');
+  font-family: 'Amadeus';
+  src: url('AMADEUS_.TTF') format('truetype');
 }
 
 /* Reset */
 *{box-sizing:border-box;margin:0;padding:0}
 body{
-  font-family:'Poppins',sans-serif;
-  background:#000;
-  color:#0ff;
-  text-align:center;
-  overflow-x:hidden;
-  padding:20px;
+  font-family:'Poppins',sans-serif;
+  background:#000;
+  color:#0ff;
+  text-align:center;
+  overflow-x:hidden;
+  padding:20px;
 }
 
 /* Caja principal */
 .radio-box{
-  position:relative;
-  background:rgba(0,0,0,0.8);
-  border-radius:25px;
-  box-shadow:0 0 20px #00ffff;
-  max-width:600px;
-  margin:40px auto;
-  padding:50px 30px;
-  animation:neonPulse 5s infinite;
+  position:relative;
+  background:rgba(0,0,0,0.8);
+  border-radius:25px;
+  box-shadow:0 0 20px #00ffff;
+  max-width:600px;
+  margin:40px auto;
+  padding:50px 30px;
+  animation:neonPulse 5s infinite;
 }
 @keyframes neonPulse{
-  0%,100%{box-shadow:0 0 20px #00ffff;}
-  50%{box-shadow:0 0 10px #ff00ff;}
+  0%,100%{box-shadow:0 0 20px #00ffff;}
+  50%{box-shadow:0 0 10px #ff00ff;}
 }
 
 /* Título */
 .radio-title{
-  font-family:'Amadeus',sans-serif;
-  font-size:2.5em;
-  letter-spacing:1px;
-  margin-bottom:20px;
-  background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-size:300%;
-  animation:neonFlow 6s infinite linear;
-  text-shadow:0 0 15px rgba(0,255,255,0.3);
+  font-family:'Amadeus',sans-serif;
+  font-size:2.5em;
+  letter-spacing:1px;
+  margin-bottom:20px;
+  background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:300%;
+  animation:neonFlow 6s infinite linear;
+  text-shadow:0 0 15px rgba(0,255,255,0.3);
 }
 @keyframes neonFlow{
-  0%{background-position:0%;}
-  100%{background-position:100%;}
+  0%{background-position:0%;}
+  100%{background-position:100%;}
 }
 
 /* Logo */
 .radio-logo{
-  display:block;
-  margin:20px auto 30px;
-  width:180px;
-  max-width:85%;
-  animation:logoPulse 4s infinite ease-in-out;
+  display:block;
+  margin:20px auto 30px;
+  width:180px;
+  max-width:85%;
+  animation:logoPulse 4s infinite ease-in-out;
 }
 @keyframes logoPulse{
-  0%{filter:drop-shadow(0 0 10px #00ffff);}
-  50%{filter:drop-shadow(0 0 15px #ff00ff);}
-  100%{filter:drop-shadow(0 0 10px #00ffff);}
+  0%{filter:drop-shadow(0 0 10px #00ffff);}
+  50%{filter:drop-shadow(0 0 15px #ff00ff);}
+  100%{filter:drop-shadow(0 0 10px #00ffff);}
 }
 
 /* Subtexto */
 .radio-sub{
-  color:#fff;
-  font-size:1.1em;
-  margin-bottom:10px;
-  text-shadow:0 0 6px rgba(0,255,255,0.3);
-}
-
-/* Oyentes */
-.radio-listeners{
-  color:#00ffff;
-  font-size:1.2em;
-  font-weight:600;
-  margin-bottom:25px;
-  text-shadow:0 0 10px #00ffff, 0 0 20px #ff00ff;
-  animation:glowText 2s ease-in-out infinite alternate;
-}
-@keyframes glowText{
-  from{text-shadow:0 0 10px #00ffff;}
-  to{text-shadow:0 0 20px #ff00ff;}
+  color:#fff;
+  font-size:1.1em;
+  margin-bottom:25px;
+  text-shadow:0 0 6px rgba(0,255,255,0.3);
 }
 
 /* Botón */
 .play-btn{
-  background:linear-gradient(135deg,#00ffff,#ff0080);
-  color:#000;
-  border:none;
-  padding:15px 50px;
-  border-radius:50px;
-  font-size:1.3em;
-  cursor:pointer;
-  text-shadow:0 0 5px #fff;
-  box-shadow:0 0 15px #00ffff;
-  transition:.3s;
+  background:linear-gradient(135deg,#00ffff,#ff0080);
+  color:#000;
+  border:none;
+  padding:15px 50px;
+  border-radius:50px;
+  font-size:1.3em;
+  cursor:pointer;
+  text-shadow:0 0 5px #fff;
+  box-shadow:0 0 15px #00ffff;
+  transition:.3s;
 }
 .play-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #ff00ff;
+  transform:scale(1.05);
+  box-shadow:0 0 25px #ff00ff;
 }
 
 /* Player */
 .player-box{
-  display:none;
-  margin-top:30px;
-  animation:fadeIn 1s ease forwards;
+  display:none;
+  margin-top:30px;
+  animation:fadeIn 1s ease forwards;
 }
 @keyframes fadeIn{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
 }
 .player-container{
-  width:120px;
-  height:100px;
-  margin:auto;
-  overflow:hidden;
-  border-radius:20px;
-  box-shadow:0 0 15px rgba(0,255,255,0.5);
+  width:120px;
+  height:100px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:20px;
+  box-shadow:0 0 15px rgba(0,255,255,0.5);
 }
 .player-container iframe{
-  width:100%;
-  height:300px;
-  border:none;
-  transform:translateY(-200px);
-  scale:1.4;
+  width:100%;
+  height:300px;
+  border:none;
+  transform:translateY(-200px);
+  scale:1.4;
 }
 
 /* Botón cerrar */
 .close-btn{
-  margin-top:20px;
-  background:#ff0080;
-  border:none;
-  color:#fff;
-  font-size:1em;
-  padding:10px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  box-shadow:0 0 10px #ff0080;
-  transition:.3s;
+  margin-top:20px;
+  background:#ff0080;
+  border:none;
+  color:#fff;
+  font-size:1em;
+  padding:10px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 0 10px #ff0080;
+  transition:.3s;
 }
 .close-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 20px #ff0080;
+  transform:scale(1.05);
+  box-shadow:0 0 20px #ff0080;
 }
 
 /* Publicidad */
 .promo-box{
-  max-width:600px;
-  margin:60px auto;
-  background:rgba(0,0,0,0.8);
-  border-radius:20px;
-  padding:45px 25px;
-  box-shadow:0 0 20px rgba(255,0,255,0.4);
+  max-width:600px;
+  margin:60px auto;
+  background:rgba(0,0,0,0.8);
+  border-radius:20px;
+  padding:45px 25px;
+  box-shadow:0 0 20px rgba(255,0,255,0.4);
 }
 .promo-box h2{
-  color:#ff00ff;
-  font-size:1.9em;
-  margin-bottom:15px;
-  text-shadow:0 0 10px rgba(255,0,255,0.4);
+  color:#ff00ff;
+  font-size:1.9em;
+  margin-bottom:15px;
+  text-shadow:0 0 10px rgba(255,0,255,0.4);
 }
 .promo-box h2 span{
-  display:block;
-  font-family:'Amadeus',sans-serif;
-  font-size:1.2em;
-  color:#00ffff;
-  text-shadow:0 0 12px #00ffff,0 0 18px #ff00ff;
+  display:block;
+  font-family:'Amadeus',sans-serif;
+  font-size:1.2em;
+  color:#00ffff;
+  text-shadow:0 0 12px #00ffff,0 0 18px #ff00ff;
 }
 .promo-box p{
-  color:#eaeaea;
-  font-size:1em;
-  line-height:1.7em;
-  margin-bottom:25px;
-  text-shadow:0 0 5px rgba(0,255,255,0.3);
-  white-space:pre-line;
+  color:#eaeaea;
+  font-size:1em;
+  line-height:1.7em;
+  margin-bottom:25px;
+  text-shadow:0 0 5px rgba(0,255,255,0.3);
+  white-space:pre-line;
 }
 .promo-btn,.share-btn{
-  display:inline-block;
-  border:none;
-  border-radius:50px;
-  text-decoration:none;
-  font-size:1.1em;
-  padding:12px 35px;
-  transition:.3s;
+  display:inline-block;
+  border:none;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:1.1em;
+  padding:12px 35px;
+  transition:.3s;
 }
 .promo-btn{
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;
-  box-shadow:0 0 15px #25D366;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;
+  box-shadow:0 0 15px #25D366;
 }
 .promo-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #25D366;
+  transform:scale(1.05);
+  box-shadow:0 0 25px #25D366;
 }
 .share-btn{
-  background:linear-gradient(135deg,#ff9900,#ff0080);
-  color:#fff;
-  margin-top:12px;
-  box-shadow:0 0 15px #ff00ff;
+  background:linear-gradient(135deg,#ff9900,#ff0080);
+  color:#fff;
+  margin-top:12px;
+  box-shadow:0 0 15px #ff00ff;
 }
 .share-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #ff00ff;
+  transform:scale(1.05);
+  box-shadow:0 0 25px #ff00ff;
 }
 
 /* Footer */
 .footer{
-  color:#888;
-  font-size:0.9em;
-  margin:40px 0 20px;
+  color:#888;
+  font-size:0.9em;
+  margin:40px 0 20px;
 }
 .footer a{
-  color:#00ffff;
-  text-decoration:none;
+  color:#00ffff;
+  text-decoration:none;
 }
 .footer a:hover{text-decoration:underline;}
 
 /* Responsive */
 @media(max-width:600px){
-  body{padding:10px;}
-  .radio-box,.promo-box{padding:30px 20px;}
-  .radio-title{font-size:2em;}
-  .radio-logo{width:150px;}
-  .player-container{width:100px;height:85px;}
-  .player-container iframe{transform:translateY(-190px);scale:1.3;}
-  .play-btn{font-size:1.1em;padding:12px 35px;}
-  .promo-box h2{font-size:1.6em;}
+  body{padding:10px;}
+  .radio-box,.promo-box{padding:30px 20px;}
+  .radio-title{font-size:2em;}
+  .radio-logo{width:150px;}
+  .player-container{width:100px;height:85px;}
+  .player-container iframe{transform:translateY(-190px);scale:1.3;}
+  .play-btn{font-size:1.1em;padding:12px 35px;}
+  .promo-box h2{font-size:1.6em;}
 }
 </style>
 </head>
 
 <body>
 <div class="radio-box">
-  <h2 class="radio-title">Radio Imagen™</h2>
-  <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen" class="radio-logo">
-  <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
-  <p class="radio-listeners">Oyentes en este momento: <span id="oyentes">0</span></p>
+  <h2 class="radio-title">Radio Imagen™</h2>
+  <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen" class="radio-logo">
+  <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
 
-  <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
+  <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
 
-  <div class="player-box" id="playerBox">
-    <div class="player-container">
-      <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
-    </div>
-    <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
-  </div>
+  <div class="player-box" id="playerBox">
+    <div class="player-container">
+      <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/" scrolling="no"></iframe>
+    </div>
+    <button class="close-btn" onclick="cerrarPlayer()">❌ CERRAR</button>
+  </div>
 </div>
 
 <div class="promo-box">
-  <h2>📢 ¡Hacemos la publicidad de tu marca en<br><span>RADIO IMAGEN™</span></h2>
-  <p>🎧 Convertí tu negocio en protagonista del aire.
+  <h2>📢 ¡Hacemos la publicidad de tu marca en<br><span>RADIO IMAGEN™</span></h2>
+  <p>🎧 Convertí tu negocio en protagonista del aire.
 
 😎 Promocioná tu marca, producto o evento con menciones en vivo.
 
@@ -279,8 +264,8 @@ body{
 
 🚀 No pierdas la oportunidad de estar donde todos escuchan.</p>
 
-  <a class="promo-btn" href="https://wa.me/5491157343551?text=Hola!%20Quiero%20publicitar%20en%20Radio%20Imagen!" target="_blank">💬 Quiero publicitar ahora</a>
-  <button class="share-btn" onclick="compartir()">📤 Compartir esta radio</button>
+  <a class="promo-btn" href="https://wa.me/5491157343551?text=Hola!%20Quiero%20publicitar%20en%20Radio%20Imagen!" target="_blank">💬 Quiero publicitar ahora</a>
+  <button class="share-btn" onclick="compartir()">📤 Compartir esta radio</button>
 </div>
 
 <p class="footer">Diseñado y desarrollado por <a href="https://ciborg347.onrender.com" target="_blank">Ciborg 347™</a></p>
@@ -289,43 +274,27 @@ body{
 const playBtn=document.getElementById('playButton');
 const playerBox=document.getElementById('playerBox');
 const radioIframe=document.getElementById('radioIframe');
-const oyentesEl=document.getElementById('oyentes');
 
 function abrirPlayer(){
-  playerBox.style.display='block';
-  playBtn.style.display='none';
-  window.scrollTo({top:playerBox.offsetTop-100,behavior:'smooth'});
+  playerBox.style.display='block';
+  playBtn.style.display='none';
+  window.scrollTo({top:playerBox.offsetTop-100,behavior:'smooth'});
 }
 function cerrarPlayer(){
-  playerBox.style.display='none';
-  playBtn.style.display='inline-block';
-  radioIframe.src=radioIframe.src;
+  playerBox.style.display='none';
+  playBtn.style.display='inline-block';
+  radioIframe.src=radioIframe.src;
 }
-
-/* Oyentes dinámicos */
-let oyentes = Math.floor(520 + Math.random() * 550); // arranque aleatorio 520–1070
-oyentesEl.textContent = oyentes;
-
-setInterval(()=>{
-  const cambio = Math.floor(Math.random() * 15) - 7; // variación de -7 a +7
-  oyentes += cambio;
-  if(oyentes < 500) oyentes = 500;
-  if(oyentes > 1100) oyentes = 1100;
-  oyentesEl.textContent = oyentes.toLocaleString('es-AR');
-}, 3000);
 
 /* Compartir */
 function compartir(){
-  const shareData={
-    title:'🎧 Radio Imagen™ | En Vivo 24hs',
-    text:'Escuchá Radio Imagen™ – música, difusión y buena vibra 24hs 🎶',
-    url:'https://radioimagen347.onrender.com'
-  };
-  if(navigator.share){navigator.share(shareData);}
-  else{
-    navigator.clipboard.writeText(shareData.url);
-    alert('📋 Enlace copiado para compartir:\n'+shareData.url);
-  }
+  const shareData={
+    title:'🎧 Radio Imagen™ | En Vivo 24hs',
+    text:'Escuchá Radio Imagen™ – música, difusión y buena vibra 24hs 🎶',
+    url:'https://radioimagen347.onrender.com'
+  };
+  if(navigator.share){navigator.share(shareData);}
+  else{alert('Copiá este enlace para compartir:\n'+shareData.url);}
 }
 </script>
 </body>
