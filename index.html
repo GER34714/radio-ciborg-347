@@ -87,8 +87,22 @@ body{
 .radio-sub{
   color:#fff;
   font-size:1.1em;
-  margin-bottom:25px;
+  margin-bottom:10px;
   text-shadow:0 0 6px rgba(0,255,255,0.3);
+}
+
+/* Oyentes */
+.radio-listeners{
+  color:#00ffff;
+  font-size:1.2em;
+  font-weight:600;
+  margin-bottom:25px;
+  text-shadow:0 0 10px #00ffff, 0 0 20px #ff00ff;
+  animation:glowText 2s ease-in-out infinite alternate;
+}
+@keyframes glowText{
+  from{text-shadow:0 0 10px #00ffff;}
+  to{text-shadow:0 0 20px #ff00ff;}
 }
 
 /* Botón */
@@ -243,6 +257,7 @@ body{
   <h2 class="radio-title">Radio Imagen™</h2>
   <img src="https://iili.io/KZ3YpR4.md.png" alt="Logo Radio Imagen" class="radio-logo">
   <p class="radio-sub">En vivo las 24 hs – Música, difusión y buena vibra 🎵</p>
+  <p class="radio-listeners">Oyentes en este momento: <span id="oyentes">0</span></p>
 
   <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
 
@@ -274,6 +289,7 @@ body{
 const playBtn=document.getElementById('playButton');
 const playerBox=document.getElementById('playerBox');
 const radioIframe=document.getElementById('radioIframe');
+const oyentesEl=document.getElementById('oyentes');
 
 function abrirPlayer(){
   playerBox.style.display='block';
@@ -286,6 +302,18 @@ function cerrarPlayer(){
   radioIframe.src=radioIframe.src;
 }
 
+/* Oyentes dinámicos */
+let oyentes = Math.floor(520 + Math.random() * 550); // arranque aleatorio 520–1070
+oyentesEl.textContent = oyentes;
+
+setInterval(()=>{
+  const cambio = Math.floor(Math.random() * 15) - 7; // variación de -7 a +7
+  oyentes += cambio;
+  if(oyentes < 500) oyentes = 500;
+  if(oyentes > 1100) oyentes = 1100;
+  oyentesEl.textContent = oyentes.toLocaleString('es-AR');
+}, 3000);
+
 /* Compartir */
 function compartir(){
   const shareData={
@@ -294,7 +322,10 @@ function compartir(){
     url:'https://radioimagen347.onrender.com'
   };
   if(navigator.share){navigator.share(shareData);}
-  else{alert('Copiá este enlace para compartir:\n'+shareData.url);}
+  else{
+    navigator.clipboard.writeText(shareData.url);
+    alert('📋 Enlace copiado para compartir:\n'+shareData.url);
+  }
 }
 </script>
 </body>
