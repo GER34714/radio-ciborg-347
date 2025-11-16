@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#00ffff">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght:300;400;600&family=Montserrat:wght:400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -33,7 +33,7 @@ body{
   src:url('AMADEUS_.TTF');
 }
 
-/* 🔥 PULSO NEÓN */
+/* 🔥 PULSO NEÓN GENERAL */
 .neon-pulse{
   background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
   -webkit-background-clip:text;
@@ -44,6 +44,19 @@ body{
 @keyframes neonMove{
   0%{background-position:0%}
   100%{background-position:100%}
+}
+
+/* 🔥 PULSO NEÓN CIAN PARA CIBORG347 */
+.neon-cyan{
+  background:linear-gradient(90deg,#00ffff,#00cccc,#00ffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:200%;
+  animation:cyanPulse 4s linear infinite;
+}
+@keyframes cyanPulse{
+  0%{background-position:0%}
+  100%{background-position:200%}
 }
 
 /* EN VIVO */
@@ -129,7 +142,7 @@ body{
  to{transform:translateX(-100%)}
 }
 
-/* BOTÓN PLAY */
+/* PLAY BUTTON */
 .play-btn{
   margin-top:20px;
   background:linear-gradient(135deg,#00ffff,#ff0080);
@@ -233,11 +246,19 @@ body{
   color:#aaa;
   font-size:1em;
   line-height:1.5em;
+  padding:20px 0;
 }
 .footer img{
   width:26px;
   vertical-align:middle;
   margin-left:6px;
+}
+
+/* ♥ Hace TODO el footer clickeable */
+.footer-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
 }
 </style>
 </head>
@@ -272,7 +293,8 @@ body{
     <button class="close-btn" onclick="cerrarPlayer()">❌ Cerrar</button>
   </div>
 
-  <a class="share-btn" href="whatsapp://send?text=📻%20Escuchá%20RADIO%20IMAGEN%20en%20vivo%2024hs:%20https://radioimagen.onrender.com">
+  <a class="share-btn" 
+     href="whatsapp://send?text=📻%20Escuchá%20RADIO%20IMAGEN%20en%20vivo%2024hs:%20https://radioimagen.onrender.com">
     🔗 Compartir Radio Imagen
   </a>
 
@@ -323,14 +345,16 @@ body{
   </a>
 </div>
 
-<!-- ⭐ FOOTER – CIBORG SIN AMADEUS -->
-<p class="footer">
-  Creado y diseñado por<br>
-  <span style="font-family:'Poppins'; font-weight:600; font-size:1.2em; color:#00ffff;">
-     CIBORG347™ 
-    <img src="https://iili.io/fHuNsWP.png">
-  </span>
-</p>
+<!-- ⭐ FOOTER CLICKEABLE ENTERO ⭐ -->
+<a href="https://ciborg347.onrender.com" target="_blank" class="footer-link">
+  <p class="footer">
+    Creado y diseñado por<br>
+    <span class="neon-cyan" style="font-family:'Poppins'; font-weight:600; font-size:1.2em;">
+      CIBORG347™ 
+      <img src="https://iili.io/fHuNsWP.png">
+    </span>
+  </p>
+</a>
 
 <script>
 function abrirPlayer(){
