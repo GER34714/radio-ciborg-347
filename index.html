@@ -3,238 +3,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎧 RADIO CANNAFEST™ | En Vivo 24hs</title>
+<title>🎧 Radio Imagen™ | En Vivo 24hs</title>
 
-<link rel="icon" type="image/png" href="https://iili.io/fIqhMwQ.webp">
+<link rel="icon" type="image/png" href="https://iili.io/KZ3YpR4.md.png">
+<link rel="shortcut icon" href="https://iili.io/KZ3YpR4.md.png">
 
-<meta property="og:title" content="RADIO CANNAFEST™ | En Vivo 24hs">
-<meta property="og:description" content="Música, cultura y vibra 420 en vivo.">
-<meta property="og:image" content="https://iili.io/fIqhMwQ.webp">
-<meta name="theme-color" content="#00ff88">
+<meta property="og:title" content="Radio Imagen™ | En Vivo 24hs">
+<meta property="og:description" content="Sintonizá RADIO IMAGEN™ – música en vivo, difusión y buena vibra.">
+<meta property="og:image" content="https://iili.io/KZ3YpR4.md.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#00ffff">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght:300;400;600&family=Montserrat:wght:600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght:300;400;600&family=Montserrat:wght:400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Poppins',sans-serif;
-  background:url('https://iili.io/fzGgVlp.jpg') center/cover fixed no-repeat;
-  color:#00ff99;
+  background:url('https://iili.io/fHT1BPp.md.jpg') center fixed no-repeat;
+  background-size:cover;
+  color:#0ff;
   text-align:center;
   padding:20px;
-  overflow-x:hidden;
 }
 
-/* TOP INFO */
-.top-info{
-  max-width:600px;margin:10px auto;
-  padding:15px 20px;background:rgba(0,0,0,.6);
-  border-radius:15px;box-shadow:0 0 20px #00ff88;
-}
-.clima-line{font-size:1.1em;color:#00ff99;text-shadow:0 0 10px #00ff99;}
-.hora-line{font-size:1em;color:#fff;opacity:.85}
-
-/* LOGO NUEVO + NEÓN MULTICOLOR */
-.logo{
-  width:240px;margin:10px auto;display:block;
-  animation:logoNeon 3s infinite ease-in-out;
-}
-@keyframes logoNeon{
-  0%{filter:drop-shadow(0 0 12px #ffff33)}
-  33%{filter:drop-shadow(0 0 14px #ff3333)}
-  66%{filter:drop-shadow(0 0 14px #22ff22)}
-  100%{filter:drop-shadow(0 0 12px #ffff33)}
+/* 🔥 Fuente Amadeus SOLO para Radio Imagen */
+@font-face{
+  font-family:'Amadeus';
+  src:url('AMADEUS_.TTF');
 }
 
-/* TÍTULO */
-.title{
-  font-size:2.8em;font-weight:700;
-  color:#00ffcc;text-shadow:0 0 20px #00ff88,0 0 40px #00ffaa;
+/* 🔥 PULSO NEÓN GENERAL */
+.neon-pulse{
+  background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:350%;
+  animation:neonMove 6s linear infinite;
+}
+@keyframes neonMove{
+  0%{background-position:0%}
+  100%{background-position:100%}
+}
+
+/* 🔥 PULSO NEÓN CIAN PARA CIBORG347 */
+.neon-cyan{
+  background:linear-gradient(90deg,#00ffff,#00cccc,#00ffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-size:200%;
+  animation:cyanPulse 4s linear infinite;
+}
+@keyframes cyanPulse{
+  0%{background-position:0%}
+  100%{background-position:200%}
 }
 
 /* EN VIVO */
 .en-vivo{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(255,0,0,.25);border:1px solid #ff0033;
-  padding:6px 18px;border-radius:25px;
-  color:#ff3355;font-weight:700;margin:10px auto;
-  box-shadow:0 0 12px #ff0033;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,0,0,.2);
+  border:1px solid #ff0033;
+  padding:6px 14px;
+  border-radius:25px;
+  color:#ff0033;
+  font-family:'Montserrat',sans-serif;
+  font-weight:600;
+  margin-top:10px;
+  margin-bottom:5px;
 }
 .en-vivo .dot{
-  width:10px;height:10px;border-radius:50%;background:#ff0033;
-  animation:pulse 1s infinite;
+  width:10px;height:10px;border-radius:50%;
+  background:#ff0033;
+  animation:pulse 1.2s infinite;
 }
 @keyframes pulse{
  0%{transform:scale(.9);opacity:.6}
- 50%{transform:scale(1.4);opacity:1}
+ 50%{transform:scale(1.3);opacity:1}
  100%{transform:scale(.9);opacity:.6}
 }
 
-/* CAJA RADIO */
-.radio-box{
-  background:rgba(0,0,0,.75);padding:40px 30px;
-  border-radius:25px;max-width:650px;margin:30px auto;
-  box-shadow:0 0 30px #00ff99;
-  border:2px solid rgba(0,255,150,0.4);
+/* TOP INFO */
+.top-info{
+  max-width:600px;
+  margin:10px auto 25px;
+  padding:15px 20px;
+  background:rgba(0,0,0,.6);
+  border-radius:15px;
+  box-shadow:0 0 15px #00ffff;
+}
+.clima-line{
+  font-size:1.1em;
+  color:#00ffff;
+  text-shadow:0 0 10px #00ffff;
+}
+.hora-line{
+  font-size:1em;
+  color:#fff;
+  opacity:.85;
 }
 
-/* BOTÓN PLAY */
+/* RADIO BOX */
+.radio-box{
+  background:rgba(0,0,0,.78);
+  padding:40px 30px;
+  border-radius:25px;
+  max-width:650px;
+  margin:30px auto;
+  box-shadow:0 0 25px #00ffff;
+}
+
+/* Título Radio Imagen™ */
+.radio-title{
+  font-family:'Amadeus';
+  font-size:3em;
+}
+.radio-title .neon-pulse{
+  display:inline-block;
+}
+
+.radio-logo{width:180px;margin:15px auto 0;display:block}
+
+/* OYENTES */
+.marquee-container{overflow:hidden;width:100%;margin-top:10px}
+.marquee{
+  white-space:nowrap;
+  display:inline-block;
+  font-size:1.2em;
+  font-weight:600;
+  color:#00ffff;
+  text-shadow:0 0 10px #00ffff;
+  animation:scroll 14s linear infinite;
+}
+@keyframes scroll{
+ from{transform:translateX(100%)}
+ to{transform:translateX(-100%)}
+}
+
+/* PLAY BUTTON */
 .play-btn{
   margin-top:20px;
-  background:linear-gradient(135deg,#00ff88,#00cc66);
+  background:linear-gradient(135deg,#00ffff,#ff0080);
   padding:15px 50px;
   border:none;border-radius:50px;
   font-size:1.3em;
   color:#000;font-weight:600;
-  box-shadow:0 0 15px #00ff88;
-  cursor:pointer;
 }
 .play-btn:hover{transform:scale(1.08)}
 
-/* BOTÓN COMPARTIR */
-.share-btn{
+.player-box{display:none;margin-top:25px}
+.player-container{
+  width:120px;height:100px;margin:auto;
+  overflow:hidden;border-radius:20px;
+  box-shadow:0 0 15px #00ffff;
+}
+.player-container iframe{
+  width:100%;height:300px;
+  transform:translateY(-200px);
+  border:none;
+}
+.close-btn{
   margin-top:15px;
-  background:linear-gradient(135deg,#00ccff,#0088ff);
-  padding:12px 40px;
-  border:none;border-radius:50px;
-  font-size:1.1em;
-  color:#fff;font-weight:600;
-  box-shadow:0 0 15px #00aaff;
-  cursor:pointer;
-}
-.share-btn:hover{transform:scale(1.08)}
-
-/* INSTAGRAM */
-.insta-box{
-  margin-top:50px;padding:25px 20px;border-radius:20px;
-  max-width:600px;background:rgba(0,0,0,.8);
-  box-shadow:0 0 20px #ff00aa;
-}
-.insta-title{font-size:1.8em;color:#ff00aa;margin-bottom:10px}
-.insta-link{
-  color:#fff;text-decoration:none;font-size:1.2em;
-  display:inline-flex;align-items:center;gap:10px;
-}
-.insta-logo{
-  width:30px;
-  filter:drop-shadow(0 0 8px #ff00aa);
+  background:#ff0080;
+  padding:10px 20px;
+  border:none;border-radius:10px;
+  color:#fff;cursor:pointer;
 }
 
-/* FOOTER LINK NUEVO */
-.footer-ciborg{
-  margin-top:60px;
-  color:#00ff88;
+/* COMPARTIR */
+.share-btn{
+  margin-top:20px;
+  background:linear-gradient(135deg,#00ffff,#005eff);
+  padding:12px 30px;
+  border:none;
+  border-radius:40px;
+  color:#000;
   font-size:1.1em;
+  font-weight:600;
   text-decoration:none;
+  display:inline-block;
+}
+
+/* SECCIÓN PUBLICIDAD */
+.publicidad-title{
+  font-family:'Montserrat';
+  font-size:2em;
+  color:#00ffff;
+  margin-top:40px;
+  margin-bottom:15px;
+  text-shadow:0 0 10px #00ffff;
+}
+.public-box{
+  background:rgba(0,0,0,.65);
+  max-width:600px;
+  margin:25px auto;
+  padding:25px 20px;
+  border-radius:20px;
+  box-shadow:0 0 18px #00ffff;
+}
+
+/* PUBLICITAR EN */
+.publicitar-box{
+  margin-top:50px;
+  padding:30px 20px;
+  border-radius:20px;
+  max-width:600px;
+  margin-left:auto;margin-right:auto;
+  background:rgba(0,0,0,.7);
+  box-shadow:0 0 20px #ff00ff;
+}
+
+.publicitar-title{
+  font-family:'Montserrat';
+  color:#ff00ff;
+  font-size:1.9em;
+  margin-bottom:10px;
+  line-height:1.2em;
+}
+.publicitar-title .neon-pulse{
+  font-family:'Amadeus';
+  font-size:1.4em;
   display:block;
+  margin-top:5px;
+}
+
+/* BOTÓN PUBLICITAR */
+.publicitar-btn{
+  margin-top:15px;
+  display:inline-block;
+  padding:12px 35px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff;border-radius:40px;
+  text-decoration:none;
+  font-size:1.1em;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:50px;
+  color:#aaa;
+  font-size:1em;
+  line-height:1.5em;
+  padding:20px 0;
+}
+.footer img{
+  width:26px;
+  vertical-align:middle;
+  margin-left:6px;
+}
+
+/* ♥ Hace TODO el footer clickeable */
+.footer-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
 }
 </style>
 </head>
-
 <body>
 
-<!-- TOP INFO -->
 <div class="top-info">
   <div class="clima-line" id="clima">Cargando clima...</div>
   <div class="hora-line" id="hora"></div>
   <div class="hora-line" id="fecha"></div>
 </div>
 
-<!-- RADIO -->
 <div class="radio-box">
 
-  <img src="https://iili.io/fIqhMwQ.webp" class="logo">
-  <h1 class="title">RADIO CANNAFEST™</h1>
+  <h2 class="radio-title"><span class="neon-pulse">Radio Imagen™</span></h2>
+
+  <img src="https://iili.io/KZ3YpR4.md.png" class="radio-logo">
 
   <div class="en-vivo"><div class="dot"></div> EN VIVO</div>
 
-  <p style="color:#fff;opacity:.9;font-size:1.1em;margin-top:10px;">
-    Música – Cultura – Vibra – 24hs 🎵
-  </p>
-
-  <!-- AUDIO REAL FASTCAST4U -->
-  <audio id="radioPlayer" preload="none" src="https://usa15.fastcast4u.com/proxy/ciborg347?mp=/1"></audio>
-
-  <!-- BOTÓN DE PLAY -->
-  <button class="play-btn" id="playBtn" onclick="toggleRadio()">▶ Escuchar radio</button>
-
-  <!-- BOTÓN COMPARTIR -->
-  <button class="share-btn" onclick="shareRadio()">📲 Compartir Radio Cannafest</button>
-
-  <div id="playerStatus" style="color:#fff;margin-top:10px;opacity:.9;">
-    ⏸ La radio está detenida.
+  <div class="marquee-container">
+    <div class="marquee" id="marqueeText">Oyentes en este momento: 500</div>
   </div>
+
+  <p class="radio-sub">En vivo 24 hs – Música, difusión y buena vibra 🎵</p>
+
+  <button class="play-btn" id="playButton" onclick="abrirPlayer()">▶️ Escuchar en vivo</button>
+
+  <div class="player-box" id="playerBox">
+    <div class="player-container">
+      <iframe id="radioIframe" src="https://zeno.fm/player/radio-imagen/"></iframe>
+    </div>
+    <button class="close-btn" onclick="cerrarPlayer()">❌ Cerrar</button>
+  </div>
+
+  <a class="share-btn" 
+     href="whatsapp://send?text=📻%20Escuchá%20RADIO%20IMAGEN%20en%20vivo%2024hs:%20https://radioimagen.onrender.com">
+    🔗 Compartir Radio Imagen
+  </a>
 
 </div>
 
-<!-- INSTAGRAM -->
-<div class="insta-box">
-  <h2 class="insta-title">Instagram Oficial</h2>
-  <a href="https://www.instagram.com/cannafest2025" target="_blank" class="insta-link">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="insta-logo">
-    @cannafest2025
+<h2 class="publicidad-title">ESPACIO PUBLICITARIO</h2>
+
+<div class="public-box">
+  <img src="https://iili.io/fHuARLP.md.jpg" style="width:100%;border-radius:15px;margin-bottom:15px;">
+  <h3 style="color:#ff00ff;font-family:'Montserrat';font-size:1.6em;margin-bottom:8px;">TÍO SERGIO™ – El lugar de los mayores</h3>
+  <p style="color:#eaeaea;line-height:1.6em;">
+    Toda la música que escuchás en <b style="font-family:'Amadeus'">Radio Imagen™</b> la vivís en <b>TÍO SERGIO™</b>.
+  </p>
+  <a href="https://tio-sergio.onrender.com" target="_blank"
+     style="display:inline-block;margin-top:15px;background:linear-gradient(135deg,#ff00ff,#b300ff);padding:12px 30px;border-radius:40px;text-decoration:none;color:#fff;">
+     👉 Ir al sitio TÍO SERGIO™
   </a>
 </div>
 
-<!-- FOOTER NUEVO -->
-<a class="footer-ciborg" href="https://ciborg347.onrender.com" target="_blank">
-  Creado y diseñado por Ciborg347™
+<div class="public-box">
+  <img src="https://iili.io/fHuRH6F.md.jpg" style="width:100%;border-radius:15px;margin-bottom:15px;">
+  <h3 style="color:#00ffff;font-family:'Montserrat';font-size:1.6em;margin-bottom:8px;">MMG – Manager Music Group™</h3>
+  <p style="color:#eaeaea;line-height:1.6em;">
+    ¿Querés tener a los artistas de <b style="font-family:'Amadeus'">Radio Imagen™</b> en tu evento?<br>
+    Contratalos directo desde <b>MMG™</b>.
+  </p>
+  <a href="https://mmg-contrataciones.onrender.com" target="_blank"
+     style="display:inline-block;margin-top:15px;background:linear-gradient(135deg,#00ffff,#0099cc);padding:12px 30px;border-radius:40px;text-decoration:none;color:#000;font-weight:600;">
+     👉 Ir al sitio MMG™
+  </a>
+</div>
+
+<!-- 🔥 PUBLICITAR EN – DOS LÍNEAS + PULSO -->
+<div class="publicitar-box">
+  <h2 class="publicitar-title">
+    PUBLICITÁ EN
+    <span class="neon-pulse">Radio Imagen™</span>
+  </h2>
+
+  <p style="color:white;margin-top:10px;">
+    Llegá a miles de oyentes reales. Spots, menciones y difusión profesional para tu negocio.
+  </p>
+
+  <a class="publicitar-btn"
+     href="https://wa.me/5491157343551?text=Hola!%20Quiero%20publicitar%20en%20Radio%20Imagen!"
+     target="_blank">
+    💬 Quiero publicitar ahora
+  </a>
+</div>
+
+<!-- ⭐ FOOTER CLICKEABLE ENTERO ⭐ -->
+<a href="https://ciborg347.onrender.com" target="_blank" class="footer-link">
+  <p class="footer">
+    Creado y diseñado por<br>
+    <span class="neon-cyan" style="font-family:'Poppins'; font-weight:600; font-size:1.2em;">
+      CIBORG347™ 
+      <img src="https://iili.io/fHuNsWP.png">
+    </span>
+  </p>
 </a>
 
 <script>
-/* PLAYER REAL */
-const audio = document.getElementById("radioPlayer");
-const btn = document.getElementById("playBtn");
-const statusEl = document.getElementById("playerStatus");
-let playing = false;
-
-function toggleRadio(){
-  if(!playing){
-    audio.load();
-    audio.play()
-    .then(()=>{
-      playing = true;
-      btn.textContent = "⏸ Detener radio";
-      statusEl.textContent = "🎧 Reproduciendo...";
-    })
-    .catch(()=>{
-      statusEl.textContent = "⚠ Tocá nuevamente para iniciar";
-    });
-  } else {
-    audio.pause();
-    playing = false;
-    btn.textContent = "▶ Escuchar radio";
-    statusEl.textContent = "⏸ La radio está detenida.";
-  }
+function abrirPlayer(){
+  document.getElementById("playerBox").style.display="block";
+  document.getElementById("playButton").style.display="none";
+}
+function cerrarPlayer(){
+  document.getElementById("playerBox").style.display="none";
+  document.getElementById("playButton").style.display="inline-block";
+  document.getElementById("radioIframe").src=document.getElementById("radioIframe").src;
 }
 
-/* COMPARTIR */
-function shareRadio(){
-  const url = "https://ciborg347.onrender.com";
-  const text = "🎧 Escuchá Radio CANNAFEST™ en vivo 24hs!";
-  if(navigator.share){
-    navigator.share({title:"Radio Cannafest",text, url});
-  } else {
-    alert("Copiá y compartí:\n" + url);
-  }
+let oy = Math.floor(Math.random()*200)+420;
+function moverOy(){
+  oy += Math.floor(Math.random()*7)-3;
+  if(oy<320)oy=320;
+  if(oy>860)oy=860;
+  document.getElementById("marqueeText").textContent =
+    "Oyentes en este momento: "+oy;
 }
+setInterval(moverOy,1800); moverOy();
 
-/* HORA + CLIMA */
 function actHora(){
-  let n=new Date();
-  document.getElementById("hora").textContent=n.toLocaleTimeString("es-AR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
-  document.getElementById("fecha").textContent=n.toLocaleDateString("es-AR",{weekday:"long",day:"numeric",month:"long"});
+  let n = new Date();
+  document.getElementById("hora").textContent =
+    n.toLocaleTimeString("es-AR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+  document.getElementById("fecha").textContent =
+    n.toLocaleDateString("es-AR",{weekday:"long",day:"numeric",month:"long"});
 }
 setInterval(actHora,1000); actHora();
 
 async function cargarClima(){
   try{
-    let ip=await fetch("https://ipapi.co/json/").then(r=>r.json());
-    let r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${ip.latitude}&longitude=${ip.longitude}&current_weather=true`).then(x=>x.json());
-    let t=r.current_weather.temperature;
-    let c=r.current_weather.weathercode;
+    let ip = await fetch("https://ipapi.co/json/").then(r=>r.json());
+    let lat = ip.latitude, lon = ip.longitude;
 
-    let icon="☀️", est="Despejado";
+    let r = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+    ).then(x=>x.json());
+
+    let t = r.current_weather.temperature;
+    let c = r.current_weather.weathercode;
+
+    let icon = "☀️", est = "Despejado";
     if(c>=45&&c<=48){icon="🌫️";est="Niebla"}
     if(c>=51&&c<=57){icon="🌦️";est="Llovizna"}
     if(c>=61&&c<=67){icon="🌧️";est="Lluvia"}
@@ -242,7 +406,7 @@ async function cargarClima(){
     if(c>=80&&c<=82){icon="🌧️";est="Chaparrones"}
     if(c>=95){icon="⛈️";est="Tormenta"}
 
-    document.getElementById("clima").textContent=
+    document.getElementById("clima").textContent =
       `${icon} ${ip.city} – ${t}°C – ${est}`;
   }catch{
     document.getElementById("clima").textContent="Clima no disponible";
