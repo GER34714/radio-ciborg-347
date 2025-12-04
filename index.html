@@ -24,8 +24,6 @@ body{
   padding:20px;
   overflow-x:hidden;
 }
-
-/* HUMO */
 body::after{
   content:"";
   position:fixed;top:0;left:0;width:100%;height:100%;
@@ -35,11 +33,8 @@ body::after{
   z-index:-1;
 }
 @keyframes smokeMove{
-  0%{transform:translateY(0)}
-  100%{transform:translateY(-300px)}
+  0%{transform:translateY(0)}100%{transform:translateY(-300px)}
 }
-
-/* TOP INFO */
 .top-info{
   max-width:600px;margin:10px auto;
   padding:15px 20px;background:rgba(0,0,0,.6);
@@ -47,8 +42,6 @@ body::after{
 }
 .clima-line{font-size:1.1em;color:#00ff99;text-shadow:0 0 10px #00ff99;}
 .hora-line{font-size:1em;color:#fff;opacity:.85}
-
-/* LOGO */
 .logo{
   width:220px;margin:10px auto;display:block;
   filter:drop-shadow(0 0 15px #00ff99);
@@ -59,14 +52,10 @@ body::after{
   50%{filter:drop-shadow(0 0 22px #00ff99)}
   100%{filter:drop-shadow(0 0 8px #00ff99)}
 }
-
-/* TÍTULO */
 .title{
   font-size:2.8em;font-weight:700;
   color:#00ffcc;text-shadow:0 0 20px #00ff88,0 0 40px #00ffaa;
 }
-
-/* EN VIVO */
 .en-vivo{
   display:inline-flex;align-items:center;gap:6px;
   background:rgba(255,0,0,.25);border:1px solid #ff0033;
@@ -83,16 +72,12 @@ body::after{
  50%{transform:scale(1.4);opacity:1}
  100%{transform:scale(.9);opacity:.6}
 }
-
-/* CAJA RADIO */
 .radio-box{
   background:rgba(0,0,0,.75);padding:40px 30px;
   border-radius:25px;max-width:650px;margin:30px auto;
   box-shadow:0 0 30px #00ff99;
   border:2px solid rgba(0,255,150,0.4);
 }
-
-/* BOTÓN PLAY */
 .play-btn{
   margin-top:20px;
   background:linear-gradient(135deg,#00ff88,#00cc66);
@@ -104,97 +89,59 @@ body::after{
   cursor:pointer;
 }
 .play-btn:hover{transform:scale(1.08)}
-
-/* INSTAGRAM */
-.insta-box{
-  margin-top:50px;padding:25px 20px;border-radius:20px;
-  max-width:600px;background:rgba(0,0,0,.8);
-  box-shadow:0 0 20px #ff00aa;
-}
-.insta-title{font-size:1.8em;color:#ff00aa;margin-bottom:10px}
-.insta-link{
-  color:#fff;text-decoration:none;font-size:1.2em;
-  display:inline-flex;align-items:center;gap:10px;
-}
-.insta-logo{
-  width:30px;
-  filter:drop-shadow(0 0 8px #ff00aa);
-}
 </style>
 </head>
 
 <body>
 
-<!-- TOP INFO -->
 <div class="top-info">
   <div class="clima-line" id="clima">Cargando clima...</div>
   <div class="hora-line" id="hora"></div>
   <div class="hora-line" id="fecha"></div>
 </div>
 
-<!-- RADIO -->
 <div class="radio-box">
-
   <img src="https://iili.io/fzEhgnt.jpg" class="logo">
   <h1 class="title">RADIO CANNAFEST™</h1>
-
   <div class="en-vivo"><div class="dot"></div> EN VIVO</div>
+  <p style="color:#fff;opacity:.9;font-size:1.1em;margin-top:10px;">Música – Cultura – Vibra – 24hs 🎵</p>
 
-  <p style="color:#fff;opacity:.9;font-size:1.1em;margin-top:10px;">
-    Música – Cultura – Vibra – 24hs 🎵
-  </p>
-
-  <!-- AUDIO FASTCAST4U -->
   <audio id="radioPlayer" preload="none" src="https://usa15.fastcast4u.com/proxy/ciborg347?mp=/1"></audio>
 
-  <!-- BOTÓN DE PLAY -->
-  <button class="play-btn" id="playBtn" onclick="toggleRadio()">▶ Escuchar radio</button>
+  <button class="play-btn" id="playBtn">▶ Escuchar radio</button>
 
   <div id="playerStatus" style="color:#fff;margin-top:10px;opacity:.9;">
     ⏸ La radio está detenida.
   </div>
-
-</div>
-
-<!-- INSTAGRAM -->
-<div class="insta-box">
-  <h2 class="insta-title">Instagram Oficial</h2>
-  <a href="https://www.instagram.com/cannafest2025" target="_blank" class="insta-link">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="insta-logo">
-    @cannafest2025
-  </a>
 </div>
 
 <script>
-/* 🎧 PLAYER */
+/* 🎧 RADIO */
 const audio = document.getElementById("radioPlayer");
-const btn = document.getElementById("playBtn");
+const playBtn = document.getElementById("playBtn");
 const statusEl = document.getElementById("playerStatus");
-let playing = false;
+let isPlaying = false;
 
-function toggleRadio(){
-  if(!playing){
-    audio.load();
-    audio.play()
-    .then(()=>{
-      playing = true;
-      btn.textContent = "⏸ Detener radio";
-      statusEl.textContent = "🎧 Reproduciendo...";
-    })
-    .catch(()=>{
-      statusEl.textContent = "⚠ Tocá nuevamente para iniciar";
+playBtn.addEventListener("click",()=>{
+  if(!isPlaying){
+    audio.play().then(()=>{
+      isPlaying = true;
+      playBtn.textContent = "⏸ Detener radio";
+      statusEl.textContent = "🎧 Reproduciendo RADIO CANNAFEST™...";
+    }).catch(()=>{
+      statusEl.textContent = "⚠ Tocá nuevamente para iniciar.";
     });
-  } else {
+  }else{
     audio.pause();
-    playing = false;
-    btn.textContent = "▶ Escuchar radio";
+    isPlaying = false;
+    playBtn.textContent = "▶ Escuchar radio";
     statusEl.textContent = "⏸ La radio está detenida.";
   }
-}
+});
 
-/* ⏰ HORA */
+/* ⏰ HORA + FECHA */
 function actHora(){
-  let n=new Date();
+  const n = new Date();
   document.getElementById("hora").textContent =
     n.toLocaleTimeString("es-AR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
   document.getElementById("fecha").textContent =
@@ -202,39 +149,38 @@ function actHora(){
 }
 setInterval(actHora,1000); actHora();
 
-/* 🌦 CLIMA — 100% FUNCIONAL */
-function cargarClimaPorCoords(lat, lon){
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`)
-    .then(r=>r.json())
-    .then(data=>{
-      let t = data.current_weather.temperature;
-      let c = data.current_weather.weathercode;
+/* 🌦 CLIMA POR IP (SIN PERMISO) */
+async function cargarClima(){
+  try{
+    const ip = await fetch("https://ipapi.co/json/").then(r=>r.json());
 
-      let icon="☀️", est="Despejado";
-      if(c>=45&&c<=48){icon="🌫️";est="Niebla"}
-      if(c>=51&&c<=57){icon="🌦️";est="Llovizna"}
-      if(c>=61&&c<=67){icon="🌧️";est="Lluvia"}
-      if(c>=71&&c<=77){icon="❄️";est="Nieve"}
-      if(c>=80&&c<=82){icon="🌧️";est="Chaparrones"}
-      if(c>=95){icon="⛈️";est="Tormenta"}
+    const lat = ip.latitude;
+    const lon = ip.longitude;
 
-      document.getElementById("clima").textContent =
-        `${icon} ${t}°C – ${est}`;
-    })
-    .catch(()=>{
-      document.getElementById("clima").textContent = "Clima no disponible";
-    });
+    const clima = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+    ).then(r=>r.json());
+
+    const t = clima.current_weather.temperature;
+    const c = clima.current_weather.weathercode;
+
+    let icon="☀️", est="Despejado";
+    if(c>=45&&c<=48){icon="🌫️"; est="Niebla";}
+    if(c>=51&&c<=57){icon="🌦️"; est="Llovizna";}
+    if(c>=61&&c<=67){icon="🌧️"; est="Lluvia";}
+    if(c>=71&&c<=77){icon="❄️"; est="Nieve";}
+    if(c>=80&&c<=82){icon="🌧️"; est="Chaparrones";}
+    if(c>=95){icon="⛈️"; est="Tormenta";}
+
+    document.getElementById("clima").textContent =
+      `${icon} ${ip.city} – ${t}°C – ${est}`;
+
+  }catch{
+    document.getElementById("clima").textContent = "Clima no disponible";
+  }
 }
 
-/* GEOLOCALIZACIÓN SEGURA */
-if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition(
-    pos => cargarClimaPorCoords(pos.coords.latitude, pos.coords.longitude),
-    err => cargarClimaPorCoords(-34.61,-58.38) // Buenos Aires fallback
-  );
-}else{
-  cargarClimaPorCoords(-34.61,-58.38);
-}
+cargarClima();
 </script>
 
 </body>
