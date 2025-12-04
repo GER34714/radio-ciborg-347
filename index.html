@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎧 RADIO CANNAFEST™ | En Vivo 24hs</title>
 
-<link rel="icon" type="image/png" href="https://iili.io/fzEhgnt.jpg">
+<link rel="icon" type="image/png" href="https://iili.io/fIqhMwQ.webp">
 
 <meta property="og:title" content="RADIO CANNAFEST™ | En Vivo 24hs">
 <meta property="og:description" content="Música, cultura y vibra 420 en vivo.">
-<meta property="og:image" content="https://iili.io/fzEhgnt.jpg">
+<meta property="og:image" content="https://iili.io/fIqhMwQ.webp">
 <meta name="theme-color" content="#00ff88">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght:300;400;600&family=Montserrat:wght:600;700&display=swap" rel="stylesheet">
@@ -25,20 +25,6 @@ body{
   overflow-x:hidden;
 }
 
-/* HUMO */
-body::after{
-  content:"";
-  position:fixed;top:0;left:0;width:100%;height:100%;
-  background:url('https://iili.io/J97rbBu.png') repeat;
-  opacity:.18;
-  animation:smokeMove 25s linear infinite;
-  z-index:-1;
-}
-@keyframes smokeMove{
-  0%{transform:translateY(0)}
-  100%{transform:translateY(-300px)}
-}
-
 /* TOP INFO */
 .top-info{
   max-width:600px;margin:10px auto;
@@ -48,16 +34,16 @@ body::after{
 .clima-line{font-size:1.1em;color:#00ff99;text-shadow:0 0 10px #00ff99;}
 .hora-line{font-size:1em;color:#fff;opacity:.85}
 
-/* LOGO */
+/* LOGO NUEVO + NEÓN MULTICOLOR */
 .logo{
-  width:220px;margin:10px auto;display:block;
-  filter:drop-shadow(0 0 15px #00ff99);
-  animation:logoPulse 4s infinite ease-in-out;
+  width:240px;margin:10px auto;display:block;
+  animation:logoNeon 3s infinite ease-in-out;
 }
-@keyframes logoPulse{
-  0%{filter:drop-shadow(0 0 8px #00ff99)}
-  50%{filter:drop-shadow(0 0 22px #00ff99)}
-  100%{filter:drop-shadow(0 0 8px #00ff99)}
+@keyframes logoNeon{
+  0%{filter:drop-shadow(0 0 12px #ffff33)}
+  33%{filter:drop-shadow(0 0 14px #ff3333)}
+  66%{filter:drop-shadow(0 0 14px #22ff22)}
+  100%{filter:drop-shadow(0 0 12px #ffff33)}
 }
 
 /* TÍTULO */
@@ -105,6 +91,19 @@ body::after{
 }
 .play-btn:hover{transform:scale(1.08)}
 
+/* BOTÓN COMPARTIR */
+.share-btn{
+  margin-top:15px;
+  background:linear-gradient(135deg,#00ccff,#0088ff);
+  padding:12px 40px;
+  border:none;border-radius:50px;
+  font-size:1.1em;
+  color:#fff;font-weight:600;
+  box-shadow:0 0 15px #00aaff;
+  cursor:pointer;
+}
+.share-btn:hover{transform:scale(1.08)}
+
 /* INSTAGRAM */
 .insta-box{
   margin-top:50px;padding:25px 20px;border-radius:20px;
@@ -119,6 +118,15 @@ body::after{
 .insta-logo{
   width:30px;
   filter:drop-shadow(0 0 8px #ff00aa);
+}
+
+/* FOOTER LINK NUEVO */
+.footer-ciborg{
+  margin-top:60px;
+  color:#00ff88;
+  font-size:1.1em;
+  text-decoration:none;
+  display:block;
 }
 </style>
 </head>
@@ -135,7 +143,7 @@ body::after{
 <!-- RADIO -->
 <div class="radio-box">
 
-  <img src="https://iili.io/fzEhgnt.jpg" class="logo">
+  <img src="https://iili.io/fIqhMwQ.webp" class="logo">
   <h1 class="title">RADIO CANNAFEST™</h1>
 
   <div class="en-vivo"><div class="dot"></div> EN VIVO</div>
@@ -149,6 +157,9 @@ body::after{
 
   <!-- BOTÓN DE PLAY -->
   <button class="play-btn" id="playBtn" onclick="toggleRadio()">▶ Escuchar radio</button>
+
+  <!-- BOTÓN COMPARTIR -->
+  <button class="share-btn" onclick="shareRadio()">📲 Compartir Radio Cannafest</button>
 
   <div id="playerStatus" style="color:#fff;margin-top:10px;opacity:.9;">
     ⏸ La radio está detenida.
@@ -164,6 +175,11 @@ body::after{
     @cannafest2025
   </a>
 </div>
+
+<!-- FOOTER NUEVO -->
+<a class="footer-ciborg" href="https://ciborg347.onrender.com" target="_blank">
+  Creado y diseñado por Ciborg347™
+</a>
 
 <script>
 /* PLAYER REAL */
@@ -189,6 +205,17 @@ function toggleRadio(){
     playing = false;
     btn.textContent = "▶ Escuchar radio";
     statusEl.textContent = "⏸ La radio está detenida.";
+  }
+}
+
+/* COMPARTIR */
+function shareRadio(){
+  const url = "https://ciborg347.onrender.com";
+  const text = "🎧 Escuchá Radio CANNAFEST™ en vivo 24hs!";
+  if(navigator.share){
+    navigator.share({title:"Radio Cannafest",text, url});
+  } else {
+    alert("Copiá y compartí:\n" + url);
   }
 }
 
