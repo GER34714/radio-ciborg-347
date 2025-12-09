@@ -27,13 +27,14 @@ body{
   padding:20px;
 }
 
-/* 🔥 Fuente Amadeus SOLO para Radio Imagen */
+/* FUENTES */
 @font-face{
   font-family:'Amadeus';
   src:url('AMADEUS_.TTF');
 }
+.radio-title { font-family:'Amadeus' !important; }
 
-/* 🔥 PULSO NEÓN GENERAL */
+/* EFECTOS NEÓN */
 .neon-pulse{
   background:linear-gradient(90deg,#00ffff,#ff00ff,#ffff00,#00ffff);
   -webkit-background-clip:text;
@@ -41,12 +42,8 @@ body{
   background-size:350%;
   animation:neonMove 6s linear infinite;
 }
-@keyframes neonMove{
-  0%{background-position:0%}
-  100%{background-position:100%}
-}
+@keyframes neonMove{0%{background-position:0%}100%{background-position:100%}}
 
-/* 🔥 PULSO NEÓN CIAN PARA CIBORG347 */
 .neon-cyan{
   background:linear-gradient(90deg,#00ffff,#00cccc,#00ffff);
   -webkit-background-clip:text;
@@ -54,38 +51,8 @@ body{
   background-size:200%;
   animation:cyanPulse 4s linear infinite;
 }
-@keyframes cyanPulse{
-  0%{background-position:0%}
-  100%{background-position:200%}
-}
+@keyframes cyanPulse{0%{background-position:0}100%{background-position:200%}}
 
-/* EN VIVO */
-.en-vivo{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  background:rgba(255,0,0,.2);
-  border:1px solid #ff0033;
-  padding:6px 14px;
-  border-radius:25px;
-  color:#ff0033;
-  font-family:'Montserrat',sans-serif;
-  font-weight:600;
-  margin-top:10px;
-  margin-bottom:5px;
-}
-.en-vivo .dot{
-  width:10px;height:10px;border-radius:50%;
-  background:#ff0033;
-  animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
- 0%{transform:scale(.9);opacity:.6}
- 50%{transform:scale(1.3);opacity:1}
- 100%{transform:scale(.9);opacity:.6}
-}
-
-/* TOP INFO */
 .top-info{
   max-width:600px;
   margin:10px auto 25px;
@@ -94,18 +61,8 @@ body{
   border-radius:15px;
   box-shadow:0 0 15px #00ffff;
 }
-.clima-line{
-  font-size:1.1em;
-  color:#00ffff;
-  text-shadow:0 0 10px #00ffff;
-}
-.hora-line{
-  font-size:1em;
-  color:#fff;
-  opacity:.85;
-}
 
-/* RADIO BOX */
+/* CAJA RADIO */
 .radio-box{
   background:rgba(0,0,0,.78);
   padding:40px 30px;
@@ -115,161 +72,174 @@ body{
   box-shadow:0 0 25px #00ffff;
 }
 
-/* Título Radio Imagen™ */
-.radio-title{
-  font-family:'Amadeus';
-  font-size:3em;
-}
-.radio-title .neon-pulse{
-  display:inline-block;
+.radio-logo{
+  width:180px;margin:15px auto 0;display:block;
 }
 
-.radio-logo{width:180px;margin:15px auto 0;display:block}
+.en-vivo{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,0,0,.2);
+  border:1px solid #ff0033;
+  padding:6px 14px;border-radius:25px;
+  color:#ff0033;margin-top:10px;margin-bottom:5px;
+}
+.en-vivo .dot{
+  width:10px;height:10px;border-radius:50%;background:#ff0033;
+  animation:pulse 1.2s infinite;
+}
+@keyframes pulse{0%{transform:scale(.9);opacity:.6}50%{transform:scale(1.3);opacity:1}100%{transform:scale(.9);opacity:.6}}
 
-/* OYENTES */
 .marquee-container{overflow:hidden;width:100%;margin-top:10px}
 .marquee{
-  white-space:nowrap;
-  display:inline-block;
-  font-size:1.2em;
-  font-weight:600;
-  color:#00ffff;
+  white-space:nowrap;display:inline-block;
+  font-size:1.2em;font-weight:600;color:#00ffff;
   text-shadow:0 0 10px #00ffff;
   animation:scroll 14s linear infinite;
 }
-@keyframes scroll{
- from{transform:translateX(100%)}
- to{transform:translateX(-100%)}
-}
+@keyframes scroll{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 
-/* PLAY BUTTON */
 .play-btn{
-  margin-top:20px;
-  background:linear-gradient(135deg,#00ffff,#ff0080);
-  padding:15px 50px;
-  border:none;border-radius:50px;
-  font-size:1.3em;
-  color:#000;font-weight:600;
+  margin-top:20px;background:linear-gradient(135deg,#00ffff,#ff0080);
+  padding:15px 50px;border:none;border-radius:50px;
+  font-size:1.3em;color:#000;font-weight:600;
 }
-.play-btn:hover{transform:scale(1.08)}
-
 .player-box{display:none;margin-top:25px}
+
 .player-container{
   width:120px;height:100px;margin:auto;
   overflow:hidden;border-radius:20px;
   box-shadow:0 0 15px #00ffff;
 }
 .player-container iframe{
-  width:100%;height:300px;
-  transform:translateY(-200px);
-  border:none;
-}
-.close-btn{
-  margin-top:15px;
-  background:#ff0080;
-  padding:10px 20px;
-  border:none;border-radius:10px;
-  color:#fff;cursor:pointer;
+  width:100%;height:300px;transform:translateY(-200px);border:none;
 }
 
-/* COMPARTIR */
 .share-btn{
-  margin-top:20px;
-  background:linear-gradient(135deg,#00ffff,#005eff);
-  padding:12px 30px;
-  border:none;
-  border-radius:40px;
-  color:#000;
-  font-size:1.1em;
-  font-weight:600;
-  text-decoration:none;
-  display:inline-block;
+  margin-top:20px;background:linear-gradient(135deg,#00ffff,#005eff);
+  padding:12px 30px;border:none;border-radius:40px;color:#000;
+  font-size:1.1em;font-weight:600;text-decoration:none;display:inline-block;
 }
 
-/* SECCIÓN PUBLICIDAD */
+.section-title{
+  font-family:'Montserrat';
+  font-size:2.1em;
+  color:#00ffff;
+  text-shadow:0 0 15px #00ffff;
+  margin-top:45px;margin-bottom:20px;
+}
+
+/* VIDEO WIDGET */
+.videos-widget{
+  max-width:900px;width:100%;
+  margin:30px auto;padding:0 15px;
+}
+
+.video-main{
+  width:100%;
+  max-width:780px;
+  aspect-ratio:16/9;
+  margin:0 auto 25px;
+  position:relative;
+  overflow:hidden;
+  border-radius:15px;
+  box-shadow:0 0 22px #00ffff;
+}
+.video-main iframe{
+  width:100%;
+  height:100%;
+  border:none;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.thumbnails{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:14px;
+}
+.thumbnails img{
+  width:150px;height:85px;
+  border-radius:10px;object-fit:cover;
+  cursor:pointer;border:3px solid transparent;
+  transition:.25s;
+}
+.thumbnails img:hover{transform:scale(1.05);border-color:#00ffff}
+.thumbnails img.selected{border-color:#ff0066;box-shadow:0 0 15px #ff0066}
+
+@media(max-width:600px){
+  .video-main{max-width:100%}
+  .thumbnails img{width:46%;height:auto}
+}
+
+/* PUBLICIDAD */
 .publicidad-title{
   font-family:'Montserrat';
-  font-size:2em;
-  color:#00ffff;
-  margin-top:40px;
-  margin-bottom:15px;
-  text-shadow:0 0 10px #00ffff;
+  font-size:2em;color:#00ffff;
+  margin-top:40px;margin-bottom:15px;
+  text-shadow:0 0 12px #00ffff;
 }
+
 .public-box{
-  background:rgba(0,0,0,.65);
-  max-width:600px;
-  margin:25px auto;
-  padding:25px 20px;
-  border-radius:20px;
-  box-shadow:0 0 18px #00ffff;
+  background:rgba(0,0,0,.55);
+  max-width:450px;
+  padding:18px 15px;
+  margin:22px auto;
+  border-radius:18px;
+  box-shadow:0 0 15px #00ffff;
 }
 
-/* PUBLICITAR EN */
-.publicitar-box{
-  margin-top:50px;
-  padding:30px 20px;
-  border-radius:20px;
-  max-width:600px;
-  margin-left:auto;margin-right:auto;
-  background:rgba(0,0,0,.7);
-  box-shadow:0 0 20px #ff00ff;
-}
-
-.publicitar-title{
-  font-family:'Montserrat';
-  color:#ff00ff;
-  font-size:1.9em;
-  margin-bottom:10px;
-  line-height:1.2em;
-}
-.publicitar-title .neon-pulse{
-  font-family:'Amadeus';
-  font-size:1.4em;
-  display:block;
-  margin-top:5px;
+.public-box img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:12px;
 }
 
 /* BOTÓN PUBLICITAR */
 .publicitar-btn{
-  margin-top:15px;
+  display:inline-block;margin-top:20px;
+  background:rgba(0,0,0,.6);
+  padding:14px 35px;border-radius:35px;
+  font-size:1.2em;font-weight:700;
+  color:#00ffff;border:2px solid #00ffff;
+  text-decoration:none;box-shadow:0 0 15px #00ffff;
+  transition:.25s;
+}
+.publicitar-btn:hover{background:#00ffff;color:#000;box-shadow:0 0 25px #00ffff}
+
+/* NUEVO BOTÓN PUBLICITA EN RADIO IMAGEN */
+.publicitar-radio{
   display:inline-block;
-  padding:12px 35px;
-  background:linear-gradient(135deg,#25D366,#128C7E);
-  color:#fff;border-radius:40px;
+  background:linear-gradient(135deg,#ff00ff,#b300ff);
+  color:white;
+  padding:15px 40px;
+  font-size:1.3em;
+  margin-top:20px;
+  border-radius:40px;
+  font-weight:700;
   text-decoration:none;
-  font-size:1.1em;
+  box-shadow:0 0 20px #ff00ff;
+  transition:.25s;
+}
+.publicitar-radio:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 28px #ff00ff;
 }
 
 /* FOOTER */
-.footer{
-  margin-top:50px;
-  color:#aaa;
-  font-size:1em;
-  line-height:1.5em;
-  padding:20px 0;
-}
-.footer img{
-  width:26px;
-  vertical-align:middle;
-  margin-left:6px;
-}
-
-/* ♥ Hace TODO el footer clickeable */
-.footer-link{
-  display:block;
-  text-decoration:none;
-  color:inherit;
-}
+.footer{margin-top:50px;color:#aaa;font-size:1em;line-height:1.5em}
+.footer img{width:26px;margin-left:6px}
 </style>
 </head>
+
 <body>
 
+<!-- ========= INFO SUPERIOR ========= -->
 <div class="top-info">
-  <div class="clima-line" id="clima">Cargando clima...</div>
-  <div class="hora-line" id="hora"></div>
-  <div class="hora-line" id="fecha"></div>
+  <div id="clima">Cargando clima...</div>
+  <div id="hora"></div>
+  <div id="fecha"></div>
 </div>
 
+<!-- ========= RADIO BOX ========= -->
 <div class="radio-box">
 
   <h2 class="radio-title"><span class="neon-pulse">Radio Imagen™</span></h2>
@@ -293,71 +263,109 @@ body{
     <button class="close-btn" onclick="cerrarPlayer()">❌ Cerrar</button>
   </div>
 
-  <a class="share-btn" 
-     href="whatsapp://send?text=📻%20Escuchá%20RADIO%20IMAGEN%20en%20vivo%2024hs:%20https://radioimagen.onrender.com">
-    🔗 Compartir Radio Imagen
+  <a class="share-btn"
+     href="whatsapp://send?text=📻 Escuchá RADIO IMAGEN en vivo 24hs: https://radioimagen.onrender.com">
+     🔗 Compartir Radio Imagen
   </a>
+</div>
+
+<!-- ========= SEGUINOS EN YOUTUBE + LOGO MÁS GRANDE ========= -->
+<h2 class="section-title" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+  <img src="https://iili.io/fA4eRNj.jpg"
+       style="width:130px;border-radius:14px;filter:drop-shadow(0 0 18px red);">
+
+  <a href="https://www.youtube.com/@elcanaldelasestrellasok"
+     target="_blank"
+     style="color:#00ffff;text-decoration:none;">
+     SEGUINOS EN YOUTUBE
+  </a>
+</h2>
+
+<!-- BOTÓN SUSCRIBIRSE -->
+<button onclick="window.open('https://www.youtube.com/@elcanaldelasestrellasok?sub_confirmation=1','_blank')"
+        style="
+        background:#ff0000;
+        color:white;
+        padding:12px 32px;
+        border:none;
+        font-size:1.25em;
+        border-radius:30px;
+        font-weight:700;
+        cursor:pointer;
+        margin-bottom:18px;
+        box-shadow:0 0 18px #ff0000;">
+  🔴 SUSCRIBIRSE
+</button>
+
+<!-- ========= VIDEOS ========= -->
+<div class="videos-widget">
+
+  <div class="video-main">
+    <iframe id="mainVideo"
+      src="https://www.youtube.com/embed/Ij-lNWYQGiE"
+      disablepictureinpicture
+      playsinline
+      webkit-playsinline
+      allow="encrypted-media">
+    </iframe>
+  </div>
+
+  <h2 class="section-title" style="margin-top:10px;font-size:1.8em;">
+    🎥 VIDEOS DESTACADOS
+  </h2>
+
+  <div class="thumbnails">
+    <img src="https://img.youtube.com/vi/Ij-lNWYQGiE/hqdefault.jpg" data-video-id="Ij-lNWYQGiE" class="selected">
+    <img src="https://img.youtube.com/vi/kq2g8Y3lkO0/hqdefault.jpg" data-video-id="kq2g8Y3lkO0">
+    <img src="https://img.youtube.com/vi/gmj1ktdFOs8/hqdefault.jpg" data-video-id="gmj1ktdFOs8">
+    <img src="https://img.youtube.com/vi/1RWspCphiyI/hqdefault.jpg" data-video-id="1RWspCphiyI">
+    <img src="https://img.youtube.com/vi/g9XH1by4Uio/hqdefault.jpg" data-video-id="g9XH1by4Uio">
+  </div>
 
 </div>
 
+<!-- ========= PUBLICIDAD ========= -->
 <h2 class="publicidad-title">ESPACIO PUBLICITARIO</h2>
 
 <div class="public-box">
-  <img src="https://iili.io/fHuARLP.md.jpg" style="width:100%;border-radius:15px;margin-bottom:15px;">
-  <h3 style="color:#ff00ff;font-family:'Montserrat';font-size:1.6em;margin-bottom:8px;">TÍO SERGIO™ – El lugar de los mayores</h3>
-  <p style="color:#eaeaea;line-height:1.6em;">
-    Toda la música que escuchás en <b style="font-family:'Amadeus'">Radio Imagen™</b> la vivís en <b>TÍO SERGIO™</b>.
-  </p>
-  <a href="https://tio-sergio.onrender.com" target="_blank"
-     style="display:inline-block;margin-top:15px;background:linear-gradient(135deg,#ff00ff,#b300ff);padding:12px 30px;border-radius:40px;text-decoration:none;color:#fff;">
-     👉 Ir al sitio TÍO SERGIO™
-  </a>
+  <img src="https://iili.io/fHuARLP.md.jpg">
+  <h3 style="color:#ff00ff;font-family:'Montserrat';font-size:1.5em;margin-bottom:8px;">TÍO SERGIO™</h3>
+  <p style="color:#eaeaea;line-height:1.5em;">Toda la música que escuchás en Radio Imagen™ la vivís en TÍO SERGIO™.</p>
+  <a class="publicitar-btn" href="https://tio-sergio.onrender.com" target="_blank">👉 Ir al sitio TÍO SERGIO™</a>
 </div>
 
 <div class="public-box">
-  <img src="https://iili.io/fHuRH6F.md.jpg" style="width:100%;border-radius:15px;margin-bottom:15px;">
-  <h3 style="color:#00ffff;font-family:'Montserrat';font-size:1.6em;margin-bottom:8px;">MMG – Manager Music Group™</h3>
-  <p style="color:#eaeaea;line-height:1.6em;">
-    ¿Querés tener a los artistas de <b style="font-family:'Amadeus'">Radio Imagen™</b> en tu evento?<br>
-    Contratalos directo desde <b>MMG™</b>.
-  </p>
-  <a href="https://web-mmg-oficial.onrender.com"
-target="_blank"
-     style="display:inline-block;margin-top:15px;background:linear-gradient(135deg,#00ffff,#0099cc);padding:12px 30px;border-radius:40px;text-decoration:none;color:#000;font-weight:600;">
-     👉 Ir al sitio MMG™
-  </a>
+  <img src="https://iili.io/fHuRH6F.md.jpg">
+  <h3 style="color:#00ffff;font-family:'Montserrat';font-size:1.5em;margin-bottom:8px;">MMG™</h3>
+  <p style="color:#eaeaea;line-height:1.5em;">Contratá artistas de la radio directo desde MMG™.</p>
+  <a class="publicitar-btn" href="https://web-mmg-oficial.onrender.com" target="_blank">👉 Ir al sitio MMG™</a>
 </div>
 
-<!-- 🔥 PUBLICITAR EN – DOS LÍNEAS + PULSO -->
-<div class="publicitar-box">
-  <h2 class="publicitar-title">
-    PUBLICITÁ EN
-    <span class="neon-pulse">Radio Imagen™</span>
-  </h2>
+<!-- ========= NUEVA SECCIÓN: PUBLICITÁ EN RADIO IMAGEN ========= -->
+<h2 class="publicidad-title" style="margin-top:35px;">PUBLICITÁ EN RADIO IMAGEN™</h2>
 
-  <p style="color:white;margin-top:10px;">
-    Llegá a miles de oyentes reales. Spots, menciones y difusión profesional para tu negocio.
-  </p>
+<a href="https://wa.me/5491157343551?text=Hola,%20quiero%20publicitar%20en%20Radio%20Imagen"
+   target="_blank"
+   class="publicitar-radio">
+   💬 PUBLICITAR AHORA
+</a>
 
-  <a class="publicitar-btn"
-     href="https://wa.me/5491157343551?text=Hola!%20Quiero%20publicitar%20en%20Radio%20Imagen!"
-     target="_blank">
-    💬 Quiero publicitar ahora
-  </a>
-</div>
-
-<!-- ⭐ FOOTER CLICKEABLE ENTERO ⭐ -->
+<!-- FOOTER -->
 <a href="https://ciborg347.onrender.com" target="_blank" class="footer-link">
   <p class="footer">
     Creado y diseñado por<br>
-    <span class="neon-cyan" style="font-family:'Poppins'; font-weight:600; font-size:1.2em;">
-      CIBORG347™ 
-      <img src="https://iili.io/fHuNsWP.png">
+    <span class="neon-cyan" style="font-size:1.2em;font-weight:600;">
+      CIBORG347™ <img src="https://iili.io/fHuNsWP.png">
     </span>
   </p>
 </a>
 
+<!-- ===============================
+            SCRIPTS
+=============================== -->
 <script>
+
+/* PLAYER */
 function abrirPlayer(){
   document.getElementById("playerBox").style.display="block";
   document.getElementById("playButton").style.display="none";
@@ -365,55 +373,56 @@ function abrirPlayer(){
 function cerrarPlayer(){
   document.getElementById("playerBox").style.display="none";
   document.getElementById("playButton").style.display="inline-block";
-  document.getElementById("radioIframe").src=document.getElementById("radioIframe").src;
+  document.getElementById("radioIframe").src =
+    document.getElementById("radioIframe").src;
 }
 
+/* OYENTES */
 let oy = Math.floor(Math.random()*200)+420;
-function moverOy(){
+setInterval(()=>{
   oy += Math.floor(Math.random()*7)-3;
-  if(oy<320)oy=320;
-  if(oy>860)oy=860;
-  document.getElementById("marqueeText").textContent =
-    "Oyentes en este momento: "+oy;
-}
-setInterval(moverOy,1800); moverOy();
+  oy = Math.max(320, Math.min(860, oy));
+  document.getElementById("marqueeText").textContent = "Oyentes en este momento: " + oy;
+},1800);
 
-function actHora(){
+/* HORA */
+setInterval(()=>{
   let n = new Date();
   document.getElementById("hora").textContent =
     n.toLocaleTimeString("es-AR",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
   document.getElementById("fecha").textContent =
     n.toLocaleDateString("es-AR",{weekday:"long",day:"numeric",month:"long"});
-}
-setInterval(actHora,1000); actHora();
+},1000);
 
+/* CLIMA */
 async function cargarClima(){
   try{
     let ip = await fetch("https://ipapi.co/json/").then(r=>r.json());
     let lat = ip.latitude, lon = ip.longitude;
-
     let r = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
     ).then(x=>x.json());
-
     let t = r.current_weather.temperature;
-    let c = r.current_weather.weathercode;
-
-    let icon = "☀️", est = "Despejado";
-    if(c>=45&&c<=48){icon="🌫️";est="Niebla"}
-    if(c>=51&&c<=57){icon="🌦️";est="Llovizna"}
-    if(c>=61&&c<=67){icon="🌧️";est="Lluvia"}
-    if(c>=71&&c<=77){icon="❄️";est="Nieve"}
-    if(c>=80&&c<=82){icon="🌧️";est="Chaparrones"}
-    if(c>=95){icon="⛈️";est="Tormenta"}
-
-    document.getElementById("clima").textContent =
-      `${icon} ${ip.city} – ${t}°C – ${est}`;
-  }catch{
-    document.getElementById("clima").textContent="Clima no disponible";
-  }
+    document.getElementById("clima").textContent = `${ip.city} – ${t}°C`;
+  }catch{}
 }
 cargarClima();
+
+/* CAMBIO DE VIDEO */
+document.querySelectorAll('.thumbnails img').forEach(el=>{
+  el.addEventListener('click', ()=>{
+
+    const id = el.getAttribute('data-video-id');
+    const iframe = document.getElementById('mainVideo');
+
+    iframe.src = 'https://www.youtube.com/embed/' + id;
+    iframe.removeAttribute("allowfullscreen");
+
+    document.querySelectorAll('.thumbnails img')
+      .forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+  });
+});
 </script>
 
 </body>
