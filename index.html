@@ -34,12 +34,12 @@
   }
 </script>
 
-<link rel="icon" type="image/png" href="https://iili.io/KZ3YpR4.md.png">
+<link rel="icon" type="image/png" href="https://iili.io/fR6g61S.png">
 <link rel="shortcut icon" href="https://iili.io/KZ3YpR4.md.png">
 
 <meta property="og:title" content="Radio Imagen™ | En Vivo 24hs">
 <meta property="og:description" content="Sintonizá RADIO IMAGEN™ – música en vivo, difusión y buena vibra.">
-<meta property="og:image" content="https://iili.io/KZ3YpR4.md.png">
+<meta property="og:image" content="https://iili.io/fR6g61S.png">
 <meta property="og:type" content="website">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght:300;400;600&family=Montserrat:wght:400;600;700&display=swap" rel="stylesheet">
@@ -238,7 +238,7 @@ body{
   border-radius:15px;
 }
 
-/* 🔥 MINIATURA CORREGIDA – ÚNICO CAMBIO */
+/* MINIATURAS */
 .thumbnails{
   display:flex;flex-wrap:wrap;
   justify-content:center;gap:14px;
@@ -288,7 +288,8 @@ body{
   font-size:1.2em;
   font-weight:700;
   color:#00ffff;border:2px solid #00ffff;
-  text-decoration:none;box-shadow:0 0 15px #00ffff;
+  text-decoration:none;
+  box-shadow:0 0 15px #00ffff;
   transition:.25s;
 }
 .publicitar-btn:hover{background:#00ffff;color:#000;box-shadow:0 0 25px #00ffff}
@@ -334,55 +335,58 @@ body{
 
 <body>
 
-<!-- BOTÓN MANUAL DE INSTALACIÓN SIEMPRE VISIBLE -->
+<!-- BOTÓN MANUAL DE INSTALACIÓN -->
 <div id="installManual" onclick="instalarAppManual()">
   📱 Instalar Radio Imagen™
 </div>
 
-<!-- BANNER INSTALAR APP -->
+<!-- BANNER INSTALAR -->
 <div id="installBanner">
   <span>📱 Instalá RADIO IMAGEN™ en tu celular</span>
   <button onclick="instalarApp()">Instalar aplicación</button>
 </div>
 
-<!-- ========= INFO SUPERIOR ========= -->
+<!-- INFO SUPERIOR -->
 <div class="top-info">
   <div id="clima">Cargando clima...</div>
   <div id="hora"></div>
   <div id="fecha"></div>
 </div>
 
-<!-- ========= RADIO BOX ========= -->
+<!-- RADIO BOX -->
 <div class="radio-box">
 
   <h2 class="radio-title"><span class="neon-pulse">Radio Imagen™</span></h2>
 
-  <img src="https://iili.io/KZ3YpR4.md.png" class="radio-logo">
+  <img src="https://iili.io/fR6g61S.png" class="radio-logo">
 
   <div class="en-vivo"><div class="dot"></div> EN VIVO</div>
 
   <div class="marquee-container">
-    <div class="marquee" id="marqueeText">Oyentes en este momento: 500</div>
+    <div class="marquee" id="marqueeText">Oyentes en este momento: 800</div>
   </div>
 
   <p class="radio-sub">En vivo 24 hs – Música, difusión y buena vibra 🎵</p>
 
-  <!-- 🔥 BOTÓN PLAY / PAUSE -->
+  <!-- BOTÓN PLAY -->
   <button class="stream-btn" id="streamBtn" onclick="toggleRadio()">
     ▶️ Escuchar Radio Imagen
   </button>
 
-  <!-- AUDIO STREAM -->
-  <audio id="streamPlayer" src="https://stream-175.zeno.fm/rer8uxdn6f0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJyZXI4dXhkbjZmMHV2IiwiaG9zdCI6InN0cmVhbS0xNzUuemVuby5mbSIsInJ0bGwiOjUsImp0aSI6Ik0zVUo3aTlLVHFPRkRGcFJTN3pSanciLCJpYXQiOjE3NjUzMDA1NzYsImV4cCI6MTc2NTMwMDYzNn0.z1o8lDRpj-zVbiu4wU9qdxNLrMqmCxyO3XB8rvbtDjA"
-    preload="none"></audio>
+  <!-- AUDIO -->
+  <audio id="streamPlayer"
+    src="https://stream-175.zeno.fm/rer8uxdn6f0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJyZXI4dXhkbjZmMHV2IiwiaG9zdCI6InN0cmVhbS0xNzUuemVuby5mbSIsInJ0bGwiOjUsImp0aSI6Ik0zVUo3aTlLVHFPRkRGcFJTN3pSanciLCJpYXQiOjE3NjUzMDA1NzYsImV4cCI6MTc2NTMwMDYzNn0.z1o8lDRpj-zVbiu4wU9qdxNLrMqmCxyO3XB8rvbtDjA"
+    preload="none">
+  </audio>
 
   <a class="share-btn"
      href="whatsapp://send?text=📻 Escuchá RADIO IMAGEN en vivo 24hs: https://radioimagen.onrender.com">
      🔗 Compartir Radio Imagen
   </a>
+
 </div>
 
-<!-- ========= SEGUINOS EN YOUTUBE ========= -->
+<!-- YOUTUBE -->
 <h2 class="section-title" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
   <img src="https://iili.io/fA4eRNj.jpg"
         style="width:130px;border-radius:14px;filter:drop-shadow(0 0 18px red);">
@@ -394,13 +398,12 @@ body{
   </a>
 </h2>
 
-<!-- BOTÓN SUSCRIBIRSE -->
 <button onclick="window.open('https://www.youtube.com/@elcanaldelasestrellasok?sub_confirmation=1','_blank')"
-        style="background:#ff0000;color:white;padding:12px 32px;border:none;font-size:1.25em;border-radius:30px;font-weight:700;cursor:pointer;margin-bottom:18px;box-shadow:0 0 18px #ff0000;">
+        style="background:#ff0000;color:white;padding:12px 32px;border:none;font-size:1.25em;border-radius:30px;font-weight:700;cursor:pointer;margin-bottom:18px;box-shadow:0 0 18px #ff00ff;">
   🔴 SUSCRIBIRSE
 </button>
 
-<!-- ========= VIDEOS ========= -->
+<!-- VIDEOS -->
 <div class="videos-widget">
 
   <div class="video-main">
@@ -413,13 +416,10 @@ body{
     </iframe>
   </div>
 
-  <h2 class="section-title" style="margin-top:10px;font-size:1.8em;">
-    🎥 VIDEOS DESTACADOS
-  </h2>
+  <h2 class="section-title" style="margin-top:10px;font-size:1.8em;">🎥 VIDEOS DESTACADOS</h2>
 
   <div class="thumbnails">
     <img src="https://img.youtube.com/vi/Ij-lNWYQGiE/hqdefault.jpg" data-video-id="Ij-lNWYQGiE" class="selected">
-    <!-- 🔥 Miniatura corregida -->
     <img src="https://img.youtube.com/vi/kq2g8Y3lkO0/hqdefault.jpg" data-video-id="kq2g8Y3lkO0">
     <img src="https://img.youtube.com/vi/gmj1ktdFOs8/hqdefault.jpg" data-video-id="gmj1ktdFOs8">
     <img src="https://img.youtube.com/vi/1RWspCphiyI/hqdefault.jpg" data-video-id="1RWspCphiyI">
@@ -428,7 +428,7 @@ body{
 
 </div>
 
-<!-- ========= PUBLICIDAD ========= -->
+<!-- PUBLICIDAD -->
 <h2 class="publicidad-title">ESPACIO PUBLICITARIO</h2>
 
 <div class="public-box">
@@ -445,7 +445,7 @@ body{
   <a class="publicitar-btn" href="https://web-mmg-oficial.onrender.com" target="_blank">👉 Ir al sitio MMG™</a>
 </div>
 
-<!-- ========= NUEVA SECCIÓN PUBLICITAR ========= -->
+<!-- PUBLICITAR -->
 <h2 class="publicidad-title" style="margin-top:35px;">PUBLICITÁ EN RADIO IMAGEN™</h2>
 
 <a href="https://wa.me/5491157343551?text=Hola,%20quiero%20publicitar%20en%20Radio%20Imagen"
@@ -458,20 +458,18 @@ body{
 <a href="https://ciborg347.onrender.com" target="_blank" class="footer-link">
   <p class="footer">
     Creado y diseñado por<br>
-    <span class="neon-cyan" style="font-size:1.2em;font-weight:600;">
-      CIBORG347™
-    </span>
+    <span class="neon-cyan" style="font-size:1.2em;font-weight:600;">CIBORG347™</span>
     <img src="https://iili.io/fHuNsWP.png">
   </p>
 </a>
 
 <!-- ===============================
-            SCRIPTS ORIGINALES
+            SCRIPTS
 ================================ -->
 
 <script>
 
-/* PLAY / PAUSE STREAM */
+/* PLAY / PAUSE */
 function toggleRadio() {
   const audio = document.getElementById("streamPlayer");
   const btn = document.getElementById("streamBtn");
@@ -485,7 +483,7 @@ function toggleRadio() {
   }
 }
 
-/* BOTÓN MANUAL DE INSTALACIÓN */
+/* BOTÓN MANUAL */
 function instalarAppManual() {
   if (deferredPrompt) {
     deferredPrompt.prompt();
@@ -494,14 +492,19 @@ function instalarAppManual() {
   }
 }
 
-/* OYENTES */
-let oy = Math.floor(Math.random()*200)+420;
-setInterval(()=>{
-  oy += Math.floor(Math.random()*7)-3;
-  oy = Math.max(320, Math.min(860, oy));
+/* 🔥 OYENTES DINÁMICOS 800–1500 */
+let oy = Math.floor(Math.random() * (1500 - 800 + 1)) + 800;
+
+setInterval(() => {
+  let variacion = Math.floor(Math.random() * 15) - 7;
+  oy += variacion;
+
+  if (oy < 800) oy = 800;
+  if (oy > 1500) oy = 1500;
+
   document.getElementById("marqueeText").textContent =
     "Oyentes en este momento: " + oy;
-},1800);
+}, 1800);
 
 /* HORA */
 setInterval(()=>{
