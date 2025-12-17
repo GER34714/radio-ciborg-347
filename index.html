@@ -385,7 +385,7 @@ body{
   <!-- AUDIO -->
   <audio id="streamPlayer"
     src="https://stream-175.zeno.fm/rer8uxdn6f0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJyZXI4dXhkbjZmMHV2IiwiaG9zdCI6InN0cmVhbS0xNzUuemVuby5mbSIsInJ0bGwiOjUsImp0aSI6Ik0zVUo3aTlLVHFPRkRGcFJTN3pSanciLCJpYXQiOjE3NjUzMDA1NzYsImV4cCI6MTc2NTMwMDYzNn0.z1o8lDRpj-zVbiu4wU9qdxNLrMqmCxyO3XB8rvbtDjA"
-    preload="none">
+    preload="auto">
   </audio>
 
   <a class="share-btn"
@@ -477,14 +477,18 @@ body{
 
 <script>
 
-/* PLAY / PAUSE */
+/* PLAY / PAUSE (CORREGIDO: SIN load() NI AUTO-RECONNECT AGRESIVO) */
 function toggleRadio() {
   const audio = document.getElementById("streamPlayer");
   const btn = document.getElementById("streamBtn");
 
   if (audio.paused) {
-    audio.play();
-    btn.textContent = "⏸️ Pausar Radio Imagen";
+    btn.textContent = "⏳ Conectando...";
+    audio.play().then(() => {
+      btn.textContent = "⏸️ Pausar Radio Imagen";
+    }).catch(() => {
+      btn.textContent = "▶️ Escuchar Radio Imagen";
+    });
   } else {
     audio.pause();
     btn.textContent = "▶️ Escuchar Radio Imagen";
